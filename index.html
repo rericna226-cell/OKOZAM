@@ -1030,6 +1030,25 @@
       margin-top: 4px;
     }
 
+    .form-consent {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: #30403f;
+      line-height: 1.45;
+      margin-top: 6px;
+    }
+
+    .form-consent input {
+      margin-top: 3px;
+    }
+
+    .form-consent a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .cta .btn-primary {
       background: #fff;
       color: #000;
@@ -1768,6 +1787,34 @@
               </div>
 
               <div class="field">
+                <label for="contact-phone">Teléfono</label>
+                <input
+                  id="contact-phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="+__"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-sector">Sector</label>
+                <select id="contact-sector" name="sector" required>
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="hyperscaler">Hyperscaler / Cloud</option>
+                  <option value="fabless">Fabless</option>
+                  <option value="idm">IDM</option>
+                  <option value="foundry">Foundry</option>
+                  <option value="defensa">Defensa e investigación</option>
+                  <option value="inversion">Inversión / VC</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="field">
                 <label for="contact-interest">Interés</label>
                 <select id="contact-interest" name="interest" required>
                   <option value="" selected disabled>Selecciona una opción</option>
@@ -1789,6 +1836,14 @@
                 required
                 placeholder="Comparte tu caso de uso, objetivo de evaluación, etapa del proceso o el tipo de acceso técnico que necesitas."
               ></textarea>
+            </div>
+
+            <div class="form-consent">
+              <input id="contact-privacy" name="privacy" type="checkbox" value="accepted" required />
+              <label for="contact-privacy">
+                He leído y acepto el <a href="privacidad.html">aviso de privacidad</a> y autorizo el
+                tratamiento de mis datos conforme a la LFPDPPP.
+              </label>
             </div>
 
             <div class="form-actions">
@@ -1914,8 +1969,9 @@
       var form = document.getElementById("contact-form");
       var status = document.getElementById("contact-status");
       var interestField = document.getElementById("contact-interest");
+      var sectorField = document.getElementById("contact-sector");
 
-      if (!form || !interestField) return;
+      if (!form || !interestField || !sectorField) return;
 
       var subjects = {
         nda: "Solicitud de NDA - OKOZAM",
@@ -1932,13 +1988,18 @@
         var formData = new FormData(form);
         var selectedOption = interestField.options[interestField.selectedIndex];
         var interestLabel = selectedOption ? selectedOption.text : "";
+        var selectedSector = sectorField.options[sectorField.selectedIndex];
+        var sectorLabel = selectedSector ? selectedSector.text : "";
         var interestValue = formData.get("interest");
         var subject = subjects[interestValue] || "Consulta estrategica - OKOZAM";
         var body = [
           "Nombre: " + (formData.get("name") || ""),
           "Empresa: " + (formData.get("company") || ""),
           "Email: " + (formData.get("email") || ""),
+          "Telefono: " + (formData.get("phone") || ""),
+          "Sector: " + sectorLabel,
           "Interes: " + interestLabel,
+          "Aviso de privacidad: Aceptado",
           "",
           "Mensaje:",
           formData.get("message") || ""
