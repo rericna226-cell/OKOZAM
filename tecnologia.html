@@ -447,6 +447,13 @@
       margin: 0;
     }
 
+    .diagram-scroll {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 22px;
+    }
+
     .diagram-figure img {
       width: 100%;
       display: block;
@@ -932,6 +939,17 @@
         grid-template-columns: 1fr;
       }
 
+      .diagram-scroll {
+        margin-inline: -4px;
+        padding-inline: 4px;
+      }
+
+      .diagram-figure img {
+        width: auto;
+        min-width: 860px;
+        max-width: none;
+      }
+
       .form-row {
         grid-template-columns: 1fr;
       }
@@ -1024,7 +1042,9 @@
         </div>
 
         <figure class="diagram-figure">
-          <img src="Recursos visuales/Diagrama.png" alt="Visualización conceptual del flujo de información DEE" />
+          <div class="diagram-scroll">
+            <img src="Recursos visuales/Diagrama.png" alt="Visualización conceptual del flujo de información DEE" />
+          </div>
           <figcaption>
             Diagrama conceptual de posicionamiento arquitectónico. La documentación técnica detallada y la validación funcional están disponibles bajo NDA.
           </figcaption>

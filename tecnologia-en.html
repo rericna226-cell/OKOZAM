@@ -447,6 +447,13 @@
       margin: 0;
     }
 
+    .diagram-scroll {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 22px;
+    }
+
     .diagram-figure img {
       width: 100%;
       display: block;
@@ -901,6 +908,17 @@
         grid-template-columns: 1fr;
       }
 
+      .diagram-scroll {
+        margin-inline: -4px;
+        padding-inline: 4px;
+      }
+
+      .diagram-figure img {
+        width: auto;
+        min-width: 860px;
+        max-width: none;
+      }
+
       .form-row {
         grid-template-columns: 1fr;
       }
@@ -993,7 +1011,9 @@
         </div>
 
         <figure class="diagram-figure">
-          <img src="Recursos visuales/DiagramaEN.png" alt="Conceptual visualization of DEE information flow" />
+          <div class="diagram-scroll">
+            <img src="Recursos visuales/DiagramaEN.png" alt="Conceptual visualization of DEE information flow" />
+          </div>
           <figcaption>
             Conceptual architectural positioning diagram. Detailed technical documentation and functional validation are available under NDA.
           </figcaption>
