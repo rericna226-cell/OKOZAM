@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Licensing | OKOZAM IP Core</title>
+
+  <meta
+    name="description"
+    content="Explore the licensing models, strategic acquisition paths, and technology transfer structure of the OKOZAM IP Core."
+  />
+
+  <style>
+    :root {
+      --bg: #f2f7f5;
+      --text: #050505;
+      --muted: #4a5c58;
+      --soft: #e7efec;
+      --soft-2: #edf5f2;
+      --dark: #071f22;
+      --dark-2: #0e3032;
+      --accent: #26c7a3;
+      --border: #d4e0dc;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 105px 0;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      font-size: clamp(54px, 7.5vw, 108px);
+      line-height: 0.96;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: clamp(42px, 5.2vw, 76px);
+      line-height: 1.02;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 25px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: #222;
+    }
+
+    .section-header {
+      max-width: 900px;
+      margin-bottom: 64px;
+    }
+
+    .center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-lead {
+      font-size: 21px;
+      color: #303332;
+      max-width: 780px;
+    }
+
+    .center .section-lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: #000;
+      color: #fff;
+      border: 1px solid #000;
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-2);
+      border-color: var(--dark-2);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    .btn-secondary:hover {
+      background: #000;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(242, 247, 245, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(7, 31, 34, 0.08);
+    }
+
+    .nav-inner {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      background:
+        linear-gradient(135deg, #394441 0 48%, transparent 48%),
+        linear-gradient(225deg, #111817 0 48%, transparent 48%),
+        linear-gradient(0deg, var(--accent) 0 28%, #596460 28%);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      opacity: 0.76;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      opacity: 1 !important;
+      border: 1px solid #111;
+      border-radius: 999px;
+      padding: 10px 17px;
+    }
+
+    .lang-switcher {
+      position: relative;
+      margin-left: 18px;
+    }
+
+    .lang {
+      appearance: none;
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.76);
+      color: #0b0f0f;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .02em;
+      cursor: pointer;
+    }
+
+    .lang-caret {
+      color: rgba(11,15,15,.55);
+      font-size: 12px;
+      transition: transform .15s ease;
+    }
+
+    .lang-switcher.open .lang-caret {
+      transform: rotate(180deg);
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      min-width: 190px;
+      padding: 8px;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: rgba(255,255,255,.98);
+      box-shadow: 0 24px 80px rgba(0,0,0,.18);
+      display: grid;
+      gap: 6px;
+      z-index: 85;
+    }
+
+    .lang-menu a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: #0b0f0f;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      background: transparent;
+    }
+
+    .lang-menu a:hover,
+    .lang-menu a.active {
+      background: rgba(0,0,0,.04);
+      border-color: rgba(0,0,0,.06);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.76);
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      flex-direction: column;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 20px;
+      height: 2px;
+      background: rgba(0,0,0,.9);
+      border-radius: 999px;
+      display: block;
+    }
+
+    .mobile-backdrop[hidden],
+    .mobile-menu[hidden],
+    .lang-menu[hidden] {
+      display: none;
+    }
+
+    .mobile-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(2px);
+      z-index: 90;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 78px;
+      left: 14px;
+      right: 14px;
+      background: rgba(255,255,255,.98);
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 18px;
+      box-shadow: 0 28px 90px rgba(0,0,0,.18);
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+      z-index: 95;
+    }
+
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #0b0f0f;
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(0,0,0,.06);
+    }
+
+    .mobile-menu a.mobile-cta {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    .mobile-menu .lang-switcher {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .mobile-menu .lang {
+      width: 100%;
+      justify-content: space-between;
+      height: auto;
+      padding: 12px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .mobile-menu .lang-menu {
+      position: static;
+      top: auto;
+      right: auto;
+      min-width: 0;
+      padding: 8px 0 0;
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      gap: 8px;
+    }
+
+    .mobile-menu .lang-menu a {
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .hero {
+      padding: 118px 0 108px;
+      background:
+        radial-gradient(circle at top left, rgba(38,199,163,.12), transparent 34%),
+        linear-gradient(180deg, #e8f1ee 0%, var(--soft-2) 52%, #f5faf8 100%);
+      border-bottom: 1px solid rgba(7,31,34,.06);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .hero-visual {
+      min-height: 540px;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(38,199,163,.28), transparent 56%),
+        radial-gradient(circle at 78% 60%, rgba(7,31,34,.18), transparent 60%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(0,0,0,.06) 0 1px,
+          rgba(0,0,0,0) 1px 44px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(0,0,0,.045) 0 1px,
+          rgba(0,0,0,0) 1px 44px
+        ),
+        linear-gradient(180deg, rgba(244,249,247,.96), rgba(233,241,237,.88));
+    }
+
+    .package {
+      background: #fff;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .package-panel {
+      position: sticky;
+      top: 120px;
+    }
+
+    .package-panel p {
+      font-size: 19px;
+      margin-bottom: 28px;
+    }
+
+    .deliverables {
+      display: grid;
+      gap: 16px;
+    }
+
+    .deliverable {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 24px;
+      background: var(--soft-2);
+      border: 1px solid var(--border);
+      padding: 28px;
+    }
+
+    .deliverable-code {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    .deliverable h3 {
+      font-size: 23px;
+      margin-bottom: 6px;
+    }
+
+    .deliverable p {
+      color: #3b3f3e;
+    }
+
+    .models {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .models .eyebrow,
+    .models .section-lead {
+      color: rgba(255,255,255,.72);
+    }
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .model-card {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      padding: 34px 28px;
+      min-height: 330px;
+    }
+
+    .model-card h3 {
+      font-size: 24px;
+    }
+
+    .model-card p {
+      color: rgba(255,255,255,.74);
+      font-size: 16px;
+    }
+
+    .integration {
+      background: var(--soft-2);
+    }
+
+    .integration-grid {
+      display: block;
+    }
+
+    .integration-panel {
+      display: grid;
+      gap: 34px;
+    }
+
+    .industry-list {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .industry-tabs {
+      display: grid;
+      gap: 12px;
+      height: 100%;
+      grid-auto-rows: 1fr;
+    }
+
+    .industry {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.82);
+      color: #0b0f0f;
+      font: inherit;
+      font-size: 16px;
+      font-weight: 650;
+      cursor: pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+      text-align: left;
+    }
+
+    .industry:hover {
+      transform: translateY(-2px);
+    }
+
+    .industry.active {
+      background: linear-gradient(180deg, rgba(38,199,163,.14), rgba(255,255,255,.92));
+      border-color: rgba(38,199,163,.4);
+      box-shadow: 0 18px 48px rgba(7,31,34,.12);
+    }
+
+    .ind-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(7,31,34,.04);
+      border: 1px solid rgba(7,31,34,.08);
+      color: #0b0f0f;
+      flex: 0 0 auto;
+    }
+
+    .industry-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(7,31,34,.08);
+      background:
+        radial-gradient(circle at 18% 22%, rgba(38,199,163,.20), transparent 58%),
+        radial-gradient(circle at 78% 60%, rgba(7,31,34,.09), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,250,249,.96));
+      min-height: 380px;
+      height: 100%;
+      padding: 28px;
+      display: grid;
+      gap: 22px;
+      align-content: start;
+      box-shadow: 0 28px 70px rgba(7,31,34,.10);
+    }
+
+    .panel-visual {
+      position: relative;
+      min-height: 190px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(7,31,34,.08);
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(7,31,34,.06) 0 1px,
+          rgba(7,31,34,0) 1px 36px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(7,31,34,.05) 0 1px,
+          rgba(7,31,34,0) 1px 36px
+        ),
+        linear-gradient(135deg, rgba(255,255,255,.84), rgba(238,243,241,.96));
+    }
+
+    .panel-visual::after {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border-radius: 20px;
+      border: 1px solid rgba(38,199,163,.22);
+      background: rgba(255,255,255,.38);
+      backdrop-filter: blur(2px);
+    }
+
+    .panel-chip {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(7,31,34,.92);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .panel-lines {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .panel-lines span {
+      position: absolute;
+      display: block;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(38,199,163,.0), rgba(38,199,163,.9), rgba(38,199,163,.0));
+      box-shadow: 0 0 22px rgba(38,199,163,.25);
+    }
+
+    .panel-lines span:nth-child(1) {
+      width: 54%;
+      top: 58px;
+      left: 20%;
+    }
+
+    .panel-lines span:nth-child(2) {
+      width: 62%;
+      top: 96px;
+      left: 12%;
+    }
+
+    .panel-lines span:nth-child(3) {
+      width: 48%;
+      top: 134px;
+      left: 28%;
+    }
+
+    .panel-lines span:nth-child(4) {
+      width: 58%;
+      top: 172px;
+      left: 18%;
+    }
+
+    .industry-panel h3 {
+      font-size: 30px;
+      margin-bottom: 12px;
+      color: #0b0f0f;
+    }
+
+    .industry-panel p {
+      color: #33403f;
+      max-width: 54ch;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .buyers-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .buyer-card {
+      background: var(--soft-2);
+      border: 1px solid var(--border);
+      padding: 30px 24px;
+      min-height: 230px;
+    }
+
+    .buyer-card h3 {
+      font-size: 22px;
+    }
+
+    .buyer-card p {
+      color: #3b3f3e;
+      font-size: 15px;
+    }
+
+    .cta {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(38,199,163,.22), transparent 58%),
+        radial-gradient(circle at 78% 60%, rgba(255,255,255,.08), transparent 62%),
+        linear-gradient(120deg, rgba(6,35,38,.96), rgba(13,70,70,.92));
+      color: #fff;
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,.82);
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .cta .btn-primary {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+
+    .cta .btn-secondary {
+      color: #fff;
+      border-color: rgba(255,255,255,.72);
+    }
+
+    .cta .btn-secondary:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    footer {
+      padding: 70px 0 50px;
+      background: #fff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      border-top: 1px solid #111;
+      padding-top: 36px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 15px;
+      color: #222;
+    }
+
+    .footer-contact {
+      text-align: right;
+      font-size: 15px;
+      color: #222;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .package-grid,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .package-panel {
+        position: static;
+      }
+
+      .models-grid,
+      .buyers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-visual {
+        min-height: 420px;
+      }
+
+      .industry-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .lang-switcher {
+        margin-left: auto;
+      }
+
+      .nav-inner > .lang-switcher .lang {
+        border-radius: 12px;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        margin-left: 10px;
+        flex: 0 0 auto;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      h2 {
+        font-size: 42px;
+      }
+
+      .hero p,
+      .section-lead,
+      .cta p {
+        font-size: 18px;
+      }
+
+      .models-grid,
+      .buyers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .industry {
+        padding: 14px 16px;
+        border-radius: 18px;
+        font-size: 15px;
+      }
+
+      .ind-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+      }
+
+      .industry-panel {
+        min-height: 320px;
+        padding: 22px;
+      }
+
+      .industry-panel h3 {
+        font-size: 24px;
+      }
+
+      .deliverable {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-contact {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="indexEN.html">
+        <span class="brand-mark"></span>
+        <span>OKOZAM</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="indexEN.html">Home</a>
+        <a href="tecnologia-en.html">Technology</a>
+        <a href="licenciamiento-en.html">Licensing</a>
+        <a href="#contacto" class="nav-cta">Request NDA</a>
+      </nav>
+
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang" type="button" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" id="langToggle">
+          <span>EN</span>
+          <span class="lang-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div class="lang-menu" id="langMenu" hidden>
+          <a href="licenciamiento.html">
+            <span>Spanish</span>
+          </a>
+          <a href="licenciamiento-en.html" class="active">
+            <span>English</span>
+          </a>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="indexEN.html">Home</a>
+    <a href="tecnologia-en.html">Technology</a>
+    <a href="licenciamiento-en.html">Licensing</a>
+    <a href="#contacto" class="mobile-cta">Request NDA</a>
+    <div class="lang-switcher mobile" id="langSwitcherMobile">
+      <button class="lang" type="button" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="langMenuMobile" id="langToggleMobile">
+        <span>EN</span>
+        <span class="lang-caret" aria-hidden="true">⌄</span>
+      </button>
+      <div class="lang-menu" id="langMenuMobile" hidden>
+        <a href="licenciamiento.html">
+          <span>Spanish</span>
+        </a>
+        <a href="licenciamiento-en.html" class="active">
+          <span>English</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">IP Licensing</div>
+          <h1>Explore strategic licensing for OKOZAM.</h1>
+          <p>
+            OKOZAM is structured as a transferable intellectual property package,
+            prepared for technical due diligence, strategic licensing, full acquisition,
+            or industrial co-development.
+          </p>
+          <p>
+            Technical documentation, protocols, know-how, and validation evidence
+            can be presented under NDA to strategic buyers and qualified industrial partners.
+          </p>
+
+          <div class="actions">
+            <a href="#paquete" class="btn btn-primary">Request NDA</a>
+            <a href="#modalidades" class="btn btn-secondary">View Models</a>
+          </div>
+        </div>
+
+        <div class="hero-visual"></div>
+      </div>
+    </section>
+
+    <section id="paquete" class="package">
+      <div class="container package-grid">
+        <div class="package-panel">
+          <div class="eyebrow">What Can Be Acquired or Licensed</div>
+          <h2>IP package, documentation, protocols, and know-how under NDA.</h2>
+          <p>
+            The OKOZAM asset is organized for technical evaluation and technology transfer,
+            with logic components, materials, communication protocols, and master documentation.
+          </p>
+
+          <div class="actions">
+            <a href="#contacto" class="btn btn-primary">Request Information under NDA</a>
+          </div>
+        </div>
+
+        <div class="deliverables">
+          <article class="deliverable">
+            <div class="deliverable-code">RTL</div>
+            <div>
+              <h3>Operational RTL Verilog</h3>
+              <p>
+                Logic modules of the Topological Voxel, testbench, and constraint files
+                for technical evaluation.
+              </p>
+            </div>
+          </article>
+
+          <article class="deliverable">
+            <div class="deliverable-code">MAT</div>
+            <div>
+              <h3>HfO₂ ReRAM Specification</h3>
+              <p>
+                Analytical model of the resistive memory substrate based on Hafnium Oxide.
+              </p>
+            </div>
+          </article>
+
+          <article class="deliverable">
+            <div class="deliverable-code">DEE</div>
+            <div>
+              <h3>DEE Boundary Scan Protocols</h3>
+              <p>
+                Host interface, packet format, telemetry, and deterministic communication.
+              </p>
+            </div>
+          </article>
+
+          <article class="deliverable">
+            <div class="deliverable-code">DOC</div>
+            <div>
+              <h3>Master Technical Documentation</h3>
+              <p>
+                Technical specification, failure modes, active redundancy, metrics, and
+                industrial synthesis flow.
+              </p>
+            </div>
+          </article>
+
+          <article class="deliverable">
+            <div class="deliverable-code">NDA</div>
+            <div>
+              <h3>Transferable Know-How</h3>
+              <p>
+                Constants, integration criteria, transitional support, and technical guidance
+                during the transfer process.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="modalidades" class="models">
+      <div class="container">
+        <div class="section-header center">
+          <div class="eyebrow">Available Models</div>
+          <h2>Acquisition, licensing, and co-development models.</h2>
+          <p class="section-lead">
+            Final transaction structures are subject to technical due diligence, commercial negotiation,
+            and specific contractual terms.
+          </p>
+        </div>
+
+        <div class="models-grid">
+          <article class="model-card">
+            <h3>Full Asset Acquisition</h3>
+            <p>
+              Irrevocable and exclusive assignment of all intellectual property rights to a
+              single counterparty. Recommended for acquirers seeking strategic exclusivity
+              against competitors.
+            </p>
+          </article>
+
+          <article class="model-card">
+            <h3>Exclusive Licensing by Vertical or Geography</h3>
+            <p>
+              Exclusive grant limited to defined fields of use, such as pharmaceutical, defense,
+              or hyperscaler, or to specific geographic regions. It allows multiple non-competing
+              counterparties.
+            </p>
+          </article>
+
+          <article class="model-card">
+            <h3>Non-Exclusive Licensing with Royalty</h3>
+            <p>
+              Open licensing model analogous to ISA architectures, with royalties per
+              manufactured unit or deployed compute capacity.
+            </p>
+          </article>
+
+          <article class="model-card">
+            <h3>Strategic Co-Development</h3>
+            <p>
+              Hybrid structure combining limited IP transfer with participation from the
+              originating team during the physical implementation phase, aligning incentives
+              toward commercial success.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="integration">
+      <div class="container integration-grid">
+        <div class="integration-panel">
+          <div class="eyebrow">Designed for Integration with Existing Infrastructure</div>
+          <h2>The infrastructure already exists. The opportunity is in a new architecture.</h2>
+          <p class="section-lead">
+            Leading companies already possess the manufacturing, packaging, and integration infrastructure.
+            OKOZAM provides the asynchronous 3D In-Memory architecture designed to enable their next
+            generation of products.
+          </p>
+        </div>
+
+        <div class="industry-list" id="integrationTabs">
+          <div class="industry-tabs">
+            <button class="industry active" type="button" data-panel="3dic" data-chip="3D-IC" data-title="3D-IC Integration" data-desc="Designed for heterogeneous integration processes and three-dimensional packaging.">
+              <span class="ind-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="8" y="8" width="8" height="8"></rect><path d="M12 1v3"></path><path d="M12 20v3"></path><path d="M1 12h3"></path><path d="M20 12h3"></path></svg>
+              </span>
+              3D-IC Integration
+            </button>
+            <button class="industry" type="button" data-panel="tsv" data-chip="TSV" data-title="TSVs and Microbumps" data-desc="Compatible with volumetric interconnection through through-silicon vias and microbumps.">
+              <span class="ind-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"></path><path d="M6 7v10"></path><path d="M18 7v10"></path><circle cx="6" cy="18" r="1.5"></circle><circle cx="12" cy="18" r="1.5"></circle><circle cx="18" cy="18" r="1.5"></circle></svg>
+              </span>
+              TSVs and Microbumps
+            </button>
+            <button class="industry" type="button" data-panel="ald" data-chip="ALD" data-title="Standard ALD Processes" data-desc="Uses Hafnium Oxide processable through standard atomic deposition flows.">
+              <span class="ind-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c2.5 3.1 4 5.4 4 8a4 4 0 1 1-8 0c0-2.6 1.5-4.9 4-8z"></path><path d="M6 20h12"></path></svg>
+              </span>
+              Standard ALD Processes
+            </button>
+            <button class="industry" type="button" data-panel="pcie" data-chip="PCIe" data-title="PCIe Gen 5 / Gen 6" data-desc="Interface oriented toward integration with modern accelerators and servers.">
+              <span class="ind-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16v10H4z"></path><path d="M8 7V4"></path><path d="M12 7V4"></path><path d="M16 7V4"></path><path d="M8 17v3"></path><path d="M12 17v3"></path><path d="M16 17v3"></path></svg>
+              </span>
+              PCIe Gen 5 / Gen 6
+            </button>
+            <button class="industry" type="button" data-panel="cxl" data-chip="CXL" data-title="Compute Express Link (CXL)" data-desc="Strategic compatibility with heterogeneous computing and shared-memory ecosystems.">
+              <span class="ind-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 7h10v10H7z"></path><path d="M3 12h4"></path><path d="M17 12h4"></path><path d="M12 3v4"></path><path d="M12 17v4"></path></svg>
+              </span>
+              Compute Express Link (CXL)
+            </button>
+            <button class="industry" type="button" data-panel="servers" data-chip="x86 / ARM" data-title="x86 and ARM Servers" data-desc="Designed to coexist with existing infrastructure architectures.">
+              <span class="ind-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="6" rx="1"></rect><rect x="4" y="14" width="16" height="6" rx="1"></rect><path d="M8 7h.01"></path><path d="M8 17h.01"></path><path d="M16 7h.01"></path><path d="M16 17h.01"></path></svg>
+              </span>
+              x86 and ARM Servers
+            </button>
+          </div>
+
+          <div class="industry-panel" id="integrationPanel">
+            <div class="panel-visual">
+              <div class="panel-chip" id="integrationChip">3D-IC</div>
+              <div class="panel-lines" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="panel-copy">
+              <h3 id="integrationTitle">3D-IC Integration</h3>
+              <p id="integrationDesc">Designed for heterogeneous integration processes and three-dimensional packaging.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header center">
+          <div class="eyebrow">Who It Is For</div>
+          <h2>Strategic buyers and industrial partners.</h2>
+          <p class="section-lead">
+            OKOZAM is designed for organizations building the next generation of
+            advanced computing infrastructure.
+          </p>
+        </div>
+
+        <div class="buyers-grid">
+          <article class="buyer-card">
+            <h3>Hyperscalers</h3>
+            <p>Custom silicon for AI datacenters and advanced simulation.</p>
+          </article>
+
+          <article class="buyer-card">
+            <h3>Fabless</h3>
+            <p>Architectural differentiation for next-generation accelerators.</p>
+          </article>
+
+          <article class="buyer-card">
+            <h3>IDMs</h3>
+            <p>New product lines based on heterogeneous integration.</p>
+          </article>
+
+          <article class="buyer-card">
+            <h3>Foundries</h3>
+            <p>High-value application for 3D-IC, ALD, TSVs, and advanced packaging.</p>
+          </article>
+
+          <article class="buyer-card">
+            <h3>Defense and Research</h3>
+            <p>Secure computing, simulation, topological cryptography, and strategic research.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow">Next Step</div>
+          <h2>Request access under NDA.</h2>
+        </div>
+
+        <div>
+          <p>
+            Discover how OKOZAM can be strategically integrated into your infrastructure,
+            business model, or technology ecosystem through acquisition, licensing,
+            or co-development structures.
+          </p>
+
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="mailto:contacto@okozam.com?subject=Solicitud%20NDA%20-%20OKOZAM"
+            >
+              Request NDA
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-links">
+        <a href="indexEN.html">Home</a>
+        <a href="tecnologia-en.html">Technology</a>
+        <a href="licenciamiento-en.html">Licensing</a>
+        <a href="#contacto">Contact</a>
+        <a href="privacidad-en.html">Privacy</a>
+      </div>
+
+      <div class="footer-contact">
+        <p>OKOZAM Topological Processor IP</p>
+        <p>Puebla, Mexico</p>
+        <p>© 2026 OKOZAM. Limited circulation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("navToggle");
+      var menu = document.getElementById("mobileMenu");
+      var backdrop = document.getElementById("mobileBackdrop");
+      if (!toggle || !menu || !backdrop) return;
+
+      function setOpen(open) {
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        menu.hidden = !open;
+        backdrop.hidden = !open;
+        document.body.classList.toggle("menu-open", open);
+      }
+
+      toggle.addEventListener("click", function () {
+        setOpen(menu.hidden);
+      });
+
+      backdrop.addEventListener("click", function () {
+        setOpen(false);
+      });
+
+      menu.addEventListener("click", function (e) {
+        var link = e.target.closest("a");
+        if (!link) return;
+        setOpen(false);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) setOpen(false);
+      });
+    })();
+
+    (function () {
+      function initLang(switcherId, toggleId, menuId) {
+        var switcher = document.getElementById(switcherId);
+        var toggle = document.getElementById(toggleId);
+        var menu = document.getElementById(menuId);
+        if (!switcher || !toggle || !menu) return;
+
+        function close() {
+          menu.hidden = true;
+          switcher.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+
+        function open() {
+          menu.hidden = false;
+          switcher.classList.add("open");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+
+        toggle.addEventListener("click", function () {
+          if (menu.hidden) open();
+          else close();
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!switcher.contains(e.target)) close();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") close();
+        });
+      }
+
+      initLang("langSwitcher", "langToggle", "langMenu");
+      initLang("langSwitcherMobile", "langToggleMobile", "langMenuMobile");
+    })();
+
+    (function () {
+      var root = document.getElementById("integrationTabs");
+      if (!root) return;
+
+      var tabs = Array.prototype.slice.call(root.querySelectorAll(".industry"));
+      var chip = document.getElementById("integrationChip");
+      var title = document.getElementById("integrationTitle");
+      var desc = document.getElementById("integrationDesc");
+
+      function setActive(btn) {
+        tabs.forEach(function (item) {
+          item.classList.remove("active");
+        });
+
+        btn.classList.add("active");
+
+        if (chip) chip.textContent = btn.dataset.chip || "";
+        if (title) title.textContent = btn.dataset.title || "";
+        if (desc) desc.textContent = btn.dataset.desc || "";
+      }
+
+      tabs.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          setActive(btn);
+        });
+      });
+
+      if (tabs[0]) setActive(tabs[0]);
+    })();
+  </script>
+
+</body>
+</html>

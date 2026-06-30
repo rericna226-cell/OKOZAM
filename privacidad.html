@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Aviso de Privacidad | OKOZAM IP Core</title>
+
+  <meta
+    name="description"
+    content="Aviso de Privacidad Integral de OKOZAM IP Core, conforme a la Ley Federal de Proteccion de Datos Personales en Posesion de los Particulares (Mexico)."
+  />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #050505;
+      --muted: #4f5654;
+      --soft: #eef3f1;
+      --soft-2: #f7faf9;
+      --dark: #071f22;
+      --dark-2: #0e3032;
+      --accent: #26c7a3;
+      --border: #dce4e1;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 105px 0;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      font-size: clamp(54px, 7.5vw, 108px);
+      line-height: 0.96;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: clamp(42px, 5.2vw, 76px);
+      line-height: 1.02;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 25px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: #222;
+    }
+
+    .section-header {
+      max-width: 900px;
+      margin-bottom: 64px;
+    }
+
+    .center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-lead {
+      font-size: 21px;
+      color: #303332;
+      max-width: 780px;
+    }
+
+    .center .section-lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: #000;
+      color: #fff;
+      border: 1px solid #000;
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-2);
+      border-color: var(--dark-2);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    .btn-secondary:hover {
+      background: #000;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-inner {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      background:
+        linear-gradient(135deg, #394441 0 48%, transparent 48%),
+        linear-gradient(225deg, #111817 0 48%, transparent 48%),
+        linear-gradient(0deg, var(--accent) 0 28%, #596460 28%);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      opacity: 0.76;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      opacity: 1 !important;
+      border: 1px solid #111;
+      border-radius: 999px;
+      padding: 10px 17px;
+    }
+
+    .lang-switcher {
+      position: relative;
+      margin-left: 18px;
+    }
+
+    .lang {
+      appearance: none;
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.76);
+      color: #0b0f0f;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .02em;
+      cursor: pointer;
+    }
+
+    .lang-caret {
+      color: rgba(11,15,15,.55);
+      font-size: 12px;
+      transition: transform .15s ease;
+    }
+
+    .lang-switcher.open .lang-caret {
+      transform: rotate(180deg);
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      min-width: 190px;
+      padding: 8px;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: rgba(255,255,255,.98);
+      box-shadow: 0 24px 80px rgba(0,0,0,.18);
+      display: grid;
+      gap: 6px;
+      z-index: 85;
+    }
+
+    .lang-menu a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: #0b0f0f;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      background: transparent;
+    }
+
+    .lang-menu a:hover,
+    .lang-menu a.active {
+      background: rgba(0,0,0,.04);
+      border-color: rgba(0,0,0,.06);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.76);
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      flex-direction: column;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 20px;
+      height: 2px;
+      background: rgba(0,0,0,.9);
+      border-radius: 999px;
+      display: block;
+    }
+
+    .mobile-backdrop[hidden],
+    .mobile-menu[hidden],
+    .lang-menu[hidden] {
+      display: none;
+    }
+
+    .mobile-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(2px);
+      z-index: 90;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 78px;
+      left: 14px;
+      right: 14px;
+      background: rgba(255,255,255,.98);
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 18px;
+      box-shadow: 0 28px 90px rgba(0,0,0,.18);
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+      z-index: 95;
+    }
+
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #0b0f0f;
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(0,0,0,.06);
+    }
+
+    .mobile-menu a.mobile-cta {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    .mobile-menu .lang-switcher {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .mobile-menu .lang {
+      width: 100%;
+      justify-content: space-between;
+      height: auto;
+      padding: 12px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .mobile-menu .lang-menu {
+      position: static;
+      top: auto;
+      right: auto;
+      min-width: 0;
+      padding: 8px 0 0;
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      gap: 8px;
+    }
+
+    .mobile-menu .lang-menu a {
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .hero {
+      padding: 118px 0 108px;
+      background: var(--soft-2);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .hero-visual {
+      min-height: 540px;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(38,199,163,.24), transparent 58%),
+        radial-gradient(circle at 78% 60%, rgba(7,31,34,.14), transparent 62%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(0,0,0,.06) 0 1px,
+          rgba(0,0,0,0) 1px 44px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(0,0,0,.045) 0 1px,
+          rgba(0,0,0,0) 1px 44px
+        ),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.72));
+    }
+
+    .diagram {
+      padding-top: 0;
+    }
+
+    .diagram-title {
+      max-width: 980px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .diagram-title h2 {
+      margin-bottom: 0;
+    }
+
+    .diagram-figure {
+      margin: 0;
+    }
+
+    .diagram-figure img {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.10);
+    }
+
+    .diagram-figure figcaption {
+      margin-top: 18px;
+      text-align: center;
+      color: rgba(17,17,17,.68);
+      font-size: 14px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .split-image {
+      min-height: 500px;
+      background:
+        radial-gradient(circle at 22% 24%, rgba(38,199,163,.22), transparent 58%),
+        radial-gradient(circle at 76% 62%, rgba(7,31,34,.18), transparent 62%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(0,0,0,.06) 0 1px,
+          rgba(0,0,0,0) 1px 46px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(0,0,0,.045) 0 1px,
+          rgba(0,0,0,0) 1px 46px
+        ),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.74));
+    }
+
+    .split p {
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
+
+    .properties {
+      background: var(--soft-2);
+    }
+
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .property-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 30px 24px;
+      min-height: 260px;
+    }
+
+    .property-card h3 {
+      font-size: 21px;
+    }
+
+    .property-card p {
+      font-size: 15px;
+      color: #3b3f3e;
+    }
+
+    .layers {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .layers .eyebrow,
+    .layers .section-lead {
+      color: rgba(255,255,255,.72);
+    }
+
+    .layers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .layer-card {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      padding: 34px 28px;
+      min-height: 310px;
+    }
+
+    .layer-code {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 26px;
+    }
+
+    .layer-card p {
+      color: rgba(255,255,255,.74);
+      font-size: 16px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 17px;
+    }
+
+    th {
+      background: #e5e8e7;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .comparison {
+      background: var(--soft-2);
+    }
+
+    .okozam-col {
+      background: #f4faf8;
+      font-weight: 800;
+    }
+
+    .dee-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 58px;
+      align-items: start;
+    }
+
+    .dee-list {
+      display: grid;
+      gap: 16px;
+      counter-reset: dee;
+    }
+
+    .dee-item {
+      counter-increment: dee;
+      background: var(--soft-2);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px 22px;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      align-items: start;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+    }
+
+    .dee-item::before {
+      content: counter(dee, decimal-leading-zero);
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: rgba(7,31,34,.92);
+      background: rgba(38,199,163,.14);
+      border: 1px solid rgba(38,199,163,.28);
+      margin-top: 2px;
+    }
+
+    .dee-item p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.5;
+      color: #1f2423;
+    }
+
+    .cta {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(38,199,163,.22), transparent 58%),
+        radial-gradient(circle at 78% 60%, rgba(255,255,255,.08), transparent 62%),
+        linear-gradient(120deg, rgba(6,35,38,.96), rgba(13,70,70,.92));
+      color: #fff;
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,.82);
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .cta .btn-primary {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+
+    .cta .btn-secondary {
+      color: #fff;
+      border-color: rgba(255,255,255,.72);
+    }
+
+    .cta .btn-secondary:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    footer {
+      padding: 70px 0 50px;
+      background: #fff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      border-top: 1px solid #111;
+      padding-top: 36px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 15px;
+      color: #222;
+    }
+
+    .footer-contact {
+      text-align: right;
+      font-size: 15px;
+      color: #222;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .split,
+      .dee-grid,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .properties-grid,
+      .layers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-visual,
+      .split-image {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-inner {
+        height: 76px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .lang-switcher {
+        margin-left: auto;
+      }
+
+      .nav-inner > .lang-switcher .lang {
+        border-radius: 12px;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        margin-left: 10px;
+        flex: 0 0 auto;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      h2 {
+        font-size: 42px;
+      }
+
+      .hero p,
+      .section-lead,
+      .split p,
+      .cta p {
+        font-size: 18px;
+      }
+
+      .properties-grid,
+      .layers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-contact {
+        text-align: left;
+      }
+    }
+
+    /* LEGAL / PRIVACY PAGE */
+    .legal-hero {
+      background: var(--soft-2);
+      border-bottom: 1px solid var(--border);
+      padding: 96px 0 64px;
+    }
+    .legal-hero .updated {
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .legal-body { padding: 72px 0 96px; }
+    .legal-grid {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .legal-toc {
+      position: sticky;
+      top: 110px;
+      display: grid;
+      gap: 6px;
+      font-size: 14px;
+    }
+    .legal-toc a {
+      color: var(--muted);
+      padding: 7px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      line-height: 1.3;
+    }
+    .legal-toc a:hover { color: var(--text); background: var(--soft); }
+    .legal-content { max-width: 760px; }
+    .legal-content section { padding: 0 0 40px; }
+    .legal-content h2 {
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .legal-content h3 { font-size: 18px; margin: 22px 0 8px; }
+    .legal-content p { color: #2b2f2e; margin-bottom: 14px; }
+    .legal-content ul { margin: 6px 0 16px 0; padding-left: 0; list-style: none; }
+    .legal-content ul li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 9px;
+      color: #2b2f2e;
+    }
+    .legal-content ul li::before {
+      content: "";
+      position: absolute;
+      left: 2px; top: 10px;
+      width: 7px; height: 7px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+    .legal-content .num { color: var(--accent); font-weight: 800; margin-right: 6px; }
+    .ph {
+      background: #fff5cc;
+      border: 1px dashed #e0b400;
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-weight: 700;
+      color: #6b5200;
+    }
+    .legal-note {
+      margin-top: 14px;
+      padding: 18px 20px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .legal-card {
+      margin-top: 8px;
+      padding: 22px 24px;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 16px;
+    }
+    .legal-card h3 { color: #fff; margin-top: 0; }
+    .legal-card p { color: rgba(255,255,255,.82); }
+    .legal-card a { color: var(--accent); font-weight: 700; }
+    @media (max-width: 900px) {
+      .legal-grid { grid-template-columns: 1fr; gap: 0; }
+      .legal-toc { display: none; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>OKOZAM</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="tecnologia.html">Tecnología</a>
+        <a href="licenciamiento.html">Licenciamiento</a>
+        <a href="index.html#contacto" class="nav-cta">Solicitar NDA</a>
+      </nav>
+
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang" type="button" aria-label="Seleccionar idioma" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" id="langToggle">
+          <span>ES</span>
+          <span class="lang-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div class="lang-menu" id="langMenu" hidden>
+          <a href="privacidad.html" class="active">
+            <span>Español</span>
+          </a>
+          <a href="privacidad-en.html">
+            <span>English</span>
+          </a>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="index.html">Inicio</a>
+    <a href="tecnologia.html">Tecnología</a>
+    <a href="licenciamiento.html">Licenciamiento</a>
+    <a href="index.html#contacto" class="mobile-cta">Solicitar NDA</a>
+    <div class="lang-switcher mobile" id="langSwitcherMobile">
+      <button class="lang" type="button" aria-label="Seleccionar idioma" aria-haspopup="true" aria-expanded="false" aria-controls="langMenuMobile" id="langToggleMobile">
+        <span>ES</span>
+        <span class="lang-caret" aria-hidden="true">⌄</span>
+      </button>
+      <div class="lang-menu" id="langMenuMobile" hidden>
+        <a href="privacidad.html" class="active">
+          <span>Español</span>
+        </a>
+        <a href="privacidad-en.html">
+          <span>English</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- LEGAL HERO -->
+    <section class="legal-hero">
+      <div class="container">
+        <div class="eyebrow">Documento legal</div>
+        <h1 style="font-size:clamp(40px,5vw,68px);line-height:1.02;margin-bottom:18px;">Aviso de Privacidad Integral</h1>
+        <p class="section-lead">
+          Este Aviso de Privacidad se emite en cumplimiento de la Ley Federal de Protección de Datos
+          Personales en Posesión de los Particulares vigente en los Estados Unidos Mexicanos.
+        </p>
+        <p class="updated">Última actualización: <span class="ph">[FECHA DD/MM/AAAA]</span></p>
+      </div>
+    </section>
+
+    <!-- LEGAL BODY -->
+    <section class="legal-body">
+      <div class="container legal-grid">
+
+        <!-- TOC -->
+        <nav class="legal-toc" aria-label="Índice del aviso">
+          <a href="#responsable">1. Responsable</a>
+          <a href="#datos">2. Datos que recabamos</a>
+          <a href="#finalidades">3. Finalidades</a>
+          <a href="#consentimiento">4. Consentimiento</a>
+          <a href="#transferencias">5. Transferencias</a>
+          <a href="#arco">6. Derechos ARCO</a>
+          <a href="#limitar">7. Limitar uso o divulgación</a>
+          <a href="#cookies">8. Cookies y tecnologías</a>
+          <a href="#cambios">9. Cambios al aviso</a>
+          <a href="#autoridad">10. Autoridad</a>
+        </nav>
+
+        <!-- CONTENT -->
+        <div class="legal-content">
+
+          <section id="responsable">
+            <h2><span class="num">1.</span>Identidad y domicilio del responsable</h2>
+            <p>
+              El responsable del tratamiento de sus datos personales es
+              <span class="ph">[NOMBRE O RAZÓN SOCIAL DEL RESPONSABLE]</span>,
+              con domicilio en
+              <span class="ph">[DOMICILIO FISCAL O LEGAL COMPLETO]</span>,
+              y correo electrónico de contacto
+              <span class="ph">[CORREO@DOMINIO]</span>
+              (en adelante, "el Responsable").
+            </p>
+            <p>
+              El Responsable es el encargado de recabar, usar y proteger los datos personales que usted
+              proporciona a través de este sitio web, conforme a los principios de licitud, consentimiento,
+              información, calidad, finalidad, lealtad, proporcionalidad y responsabilidad previstos en la ley.
+            </p>
+          </section>
+
+          <section id="datos">
+            <h2><span class="num">2.</span>Datos personales que recabamos</h2>
+            <p>
+              A través del formulario de contacto de este sitio recabamos, de forma directa y por medios
+              electrónicos, únicamente los siguientes datos personales:
+            </p>
+            <ul>
+              <li>Nombre completo.</li>
+              <li>Empresa u organización.</li>
+              <li>Correo electrónico.</li>
+              <li>La información que usted decida incluir libremente en el campo de mensaje, así como el tipo de interés seleccionado (NDA, licenciamiento, adquisición, integración o consulta técnica).</li>
+            </ul>
+            <p>
+              No recabamos datos personales sensibles, ni datos financieros o patrimoniales, a través de
+              este sitio.
+            </p>
+          </section>
+
+          <section id="finalidades">
+            <h2><span class="num">3.</span>Finalidades del tratamiento</h2>
+            <h3>Finalidades primarias (necesarias)</h3>
+            <p>Sus datos se utilizan para las siguientes finalidades que dan origen y son necesarias para la relación con usted:</p>
+            <ul>
+              <li>Atender, dar seguimiento y responder a su solicitud de información, NDA, licenciamiento, adquisición o integración.</li>
+              <li>Contactarle por medios electrónicos o telefónicos para coordinar conversaciones técnicas, due diligence o transferencia de propiedad intelectual.</li>
+              <li>Identificar y calificar al solicitante como contraparte o socio potencial.</li>
+              <li>Dar cumplimiento a obligaciones derivadas de la relación que, en su caso, se establezca.</li>
+            </ul>
+            <h3>Finalidades secundarias (opcionales)</h3>
+            <p>
+              De manera adicional, y solo si usted no manifiesta su oposición, podríamos utilizar sus datos para
+              <span class="ph">[DESCRIBIR FINALIDAD SECUNDARIA, EJ. ENVÍO DE INFORMACIÓN INSTITUCIONAL]</span>.
+              Si no desea que sus datos se traten para estas finalidades, puede manifestarlo conforme a la
+              sección 7 de este aviso. Su negativa no será motivo para negarle los servicios solicitados.
+            </p>
+          </section>
+
+          <section id="consentimiento">
+            <h2><span class="num">4.</span>Consentimiento</h2>
+            <p>
+              Al proporcionar sus datos personales a través del formulario de este sitio y enviar su solicitud,
+              usted reconoce haber leído el presente Aviso de Privacidad y otorga su consentimiento para el
+              tratamiento de sus datos conforme a las finalidades aquí descritas. El consentimiento puede ser
+              revocado en cualquier momento conforme a la sección 6.
+            </p>
+          </section>
+
+          <section id="transferencias">
+            <h2><span class="num">5.</span>Transferencias de datos personales</h2>
+            <p>
+              El Responsable no transferirá sus datos personales a terceros sin su consentimiento, salvo en los
+              supuestos de excepción previstos por la ley (por ejemplo, cuando la transferencia esté prevista en
+              una norma, sea necesaria para la procuración o administración de justicia, o se realice entre
+              empresas de un mismo grupo bajo políticas comunes).
+            </p>
+            <p>
+              En caso de que el Responsable requiera transferir datos a terceros distintos de los anteriores
+              (por ejemplo <span class="ph">[ASESORES LEGALES, PROVEEDORES DE CORREO O CRM, EN SU CASO]</span>),
+              se lo informará y, cuando la ley lo exija, recabará su consentimiento.
+            </p>
+          </section>
+
+          <section id="arco">
+            <h2><span class="num">6.</span>Medios para ejercer los derechos ARCO y revocar el consentimiento</h2>
+            <p>
+              Usted tiene derecho a conocer qué datos personales tenemos, para qué los utilizamos y las
+              condiciones de su uso (Acceso); a solicitar su corrección cuando sean inexactos o incompletos
+              (Rectificación); a que los eliminemos de nuestros registros cuando considere que no se utilizan
+              conforme a la normativa (Cancelación); así como a oponerse al uso de sus datos para fines
+              específicos (Oposición). Estos se conocen como derechos ARCO.
+            </p>
+            <p>
+              Para ejercer cualquiera de estos derechos, o para revocar su consentimiento, envíe una solicitud al
+              correo <span class="ph">[CORREO PARA SOLICITUDES ARCO]</span> indicando:
+            </p>
+            <ul>
+              <li>Nombre del titular y medio para comunicarle la respuesta.</li>
+              <li>Documento que acredite su identidad (o la representación legal, en su caso).</li>
+              <li>Descripción clara y precisa del derecho que desea ejercer o de la solicitud concreta.</li>
+              <li>Cualquier elemento que facilite la localización de los datos personales.</li>
+            </ul>
+            <p>
+              El Responsable dará respuesta a su solicitud en los plazos establecidos por la ley aplicable.
+            </p>
+          </section>
+
+          <section id="limitar">
+            <h2><span class="num">7.</span>Medios para limitar el uso o divulgación de sus datos</h2>
+            <p>
+              Puede solicitar la limitación del uso o divulgación de sus datos personales enviando su petición al
+              correo <span class="ph">[CORREO PARA SOLICITUDES ARCO]</span>. Asimismo, en cualquier comunicación
+              que reciba de nuestra parte se incluirá un mecanismo para que pueda solicitar dejar de recibirla.
+            </p>
+          </section>
+
+          <section id="cookies">
+            <h2><span class="num">8.</span>Uso de cookies y tecnologías de rastreo</h2>
+            <p>
+              <span class="ph">[INDICAR SI EL SITIO UTILIZA COOKIES O TECNOLOGÍAS DE RASTREO. SI NO LAS UTILIZA, DEJAR: "Este sitio no utiliza cookies ni tecnologías de rastreo que recaben datos personales de forma automática."]</span>
+            </p>
+          </section>
+
+          <section id="cambios">
+            <h2><span class="num">9.</span>Modificaciones al Aviso de Privacidad</h2>
+            <p>
+              El presente Aviso de Privacidad puede sufrir modificaciones derivadas de cambios legales, de
+              nuestras prácticas internas o de nuevos requerimientos. Cualquier cambio será publicado en esta
+              misma página, indicando la fecha de la última actualización. Le recomendamos revisarla
+              periódicamente.
+            </p>
+          </section>
+
+          <section id="autoridad">
+            <h2><span class="num">10.</span>Autoridad en materia de protección de datos</h2>
+            <p>
+              Si considera que su derecho a la protección de datos personales ha sido vulnerado, puede acudir
+              ante la autoridad competente en materia de protección de datos personales en posesión de los
+              particulares en México.
+            </p>
+            <div class="legal-card">
+              <h3>¿Dudas sobre este aviso?</h3>
+              <p>
+                Para cualquier consulta relacionada con el tratamiento de sus datos personales, escríbanos a
+                <a href="mailto:[CORREO@DOMINIO]">[CORREO@DOMINIO]</a>.
+              </p>
+            </div>
+            <p class="legal-note">
+              Nota para el equipo (eliminar antes de publicar): los campos marcados en amarillo son obligatorios
+              y deben completarse con datos reales. Este documento es una base estructurada conforme a la ley;
+              se recomienda que un abogado lo revise antes de publicarlo, especialmente al tratarse de un sitio
+              que maneja información confidencial bajo NDA.
+            </p>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="tecnologia.html">Tecnología</a>
+        <a href="licenciamiento.html">Licenciamiento</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="privacidad.html">Privacidad</a>
+      </div>
+
+      <div class="footer-contact">
+        <p>OKOZAM Topological Processor IP</p>
+        <p>Puebla, México</p>
+        <p>© 2026 OKOZAM. Difusión limitada.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("navToggle");
+      var menu = document.getElementById("mobileMenu");
+      var backdrop = document.getElementById("mobileBackdrop");
+      if (!toggle || !menu || !backdrop) return;
+
+      function setOpen(open) {
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        menu.hidden = !open;
+        backdrop.hidden = !open;
+        document.body.classList.toggle("menu-open", open);
+      }
+
+      toggle.addEventListener("click", function () {
+        setOpen(menu.hidden);
+      });
+
+      backdrop.addEventListener("click", function () {
+        setOpen(false);
+      });
+
+      menu.addEventListener("click", function (e) {
+        var link = e.target.closest("a");
+        if (!link) return;
+        setOpen(false);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) setOpen(false);
+      });
+    })();
+
+    (function () {
+      function initLang(switcherId, toggleId, menuId) {
+        var switcher = document.getElementById(switcherId);
+        var toggle = document.getElementById(toggleId);
+        var menu = document.getElementById(menuId);
+        if (!switcher || !toggle || !menu) return;
+
+        function close() {
+          menu.hidden = true;
+          switcher.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+
+        function open() {
+          menu.hidden = false;
+          switcher.classList.add("open");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+
+        toggle.addEventListener("click", function () {
+          if (menu.hidden) open();
+          else close();
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!switcher.contains(e.target)) close();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") close();
+        });
+      }
+
+      initLang("langSwitcher", "langToggle", "langMenu");
+      initLang("langSwitcherMobile", "langToggleMobile", "langMenuMobile");
+    })();
+  </script>
+
+</body>
+</html>

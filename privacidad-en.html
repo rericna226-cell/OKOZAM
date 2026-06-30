@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Privacy Notice | OKOZAM IP Core</title>
+
+  <meta
+    name="description"
+    content="Comprehensive Privacy Notice of OKOZAM IP Core, in accordance with Mexico's Federal Law on the Protection of Personal Data Held by Private Parties."
+  />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #050505;
+      --muted: #4f5654;
+      --soft: #eef3f1;
+      --soft-2: #f7faf9;
+      --dark: #071f22;
+      --dark-2: #0e3032;
+      --accent: #26c7a3;
+      --border: #dce4e1;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 105px 0;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      font-size: clamp(54px, 7.5vw, 108px);
+      line-height: 0.96;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: clamp(42px, 5.2vw, 76px);
+      line-height: 1.02;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 25px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: #222;
+    }
+
+    .section-header {
+      max-width: 900px;
+      margin-bottom: 64px;
+    }
+
+    .center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-lead {
+      font-size: 21px;
+      color: #303332;
+      max-width: 780px;
+    }
+
+    .center .section-lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: #000;
+      color: #fff;
+      border: 1px solid #000;
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-2);
+      border-color: var(--dark-2);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    .btn-secondary:hover {
+      background: #000;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-inner {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      background:
+        linear-gradient(135deg, #394441 0 48%, transparent 48%),
+        linear-gradient(225deg, #111817 0 48%, transparent 48%),
+        linear-gradient(0deg, var(--accent) 0 28%, #596460 28%);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      opacity: 0.76;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      opacity: 1 !important;
+      border: 1px solid #111;
+      border-radius: 999px;
+      padding: 10px 17px;
+    }
+
+    .lang-switcher {
+      position: relative;
+      margin-left: 18px;
+    }
+
+    .lang {
+      appearance: none;
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.76);
+      color: #0b0f0f;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .02em;
+      cursor: pointer;
+    }
+
+    .lang-caret {
+      color: rgba(11,15,15,.55);
+      font-size: 12px;
+      transition: transform .15s ease;
+    }
+
+    .lang-switcher.open .lang-caret {
+      transform: rotate(180deg);
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      min-width: 190px;
+      padding: 8px;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: rgba(255,255,255,.98);
+      box-shadow: 0 24px 80px rgba(0,0,0,.18);
+      display: grid;
+      gap: 6px;
+      z-index: 85;
+    }
+
+    .lang-menu a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: #0b0f0f;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      background: transparent;
+    }
+
+    .lang-menu a:hover,
+    .lang-menu a.active {
+      background: rgba(0,0,0,.04);
+      border-color: rgba(0,0,0,.06);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.76);
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      flex-direction: column;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 20px;
+      height: 2px;
+      background: rgba(0,0,0,.9);
+      border-radius: 999px;
+      display: block;
+    }
+
+    .mobile-backdrop[hidden],
+    .mobile-menu[hidden],
+    .lang-menu[hidden] {
+      display: none;
+    }
+
+    .mobile-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(2px);
+      z-index: 90;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 78px;
+      left: 14px;
+      right: 14px;
+      background: rgba(255,255,255,.98);
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 18px;
+      box-shadow: 0 28px 90px rgba(0,0,0,.18);
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+      z-index: 95;
+    }
+
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #0b0f0f;
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(0,0,0,.06);
+    }
+
+    .mobile-menu a.mobile-cta {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    .mobile-menu .lang-switcher {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .mobile-menu .lang {
+      width: 100%;
+      justify-content: space-between;
+      height: auto;
+      padding: 12px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .mobile-menu .lang-menu {
+      position: static;
+      top: auto;
+      right: auto;
+      min-width: 0;
+      padding: 8px 0 0;
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      gap: 8px;
+    }
+
+    .mobile-menu .lang-menu a {
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    footer {
+      padding: 70px 0 50px;
+      background: #fff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      border-top: 1px solid #111;
+      padding-top: 36px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 15px;
+      color: #222;
+    }
+
+    .footer-contact {
+      text-align: right;
+      font-size: 15px;
+      color: #222;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-inner {
+        height: 76px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .lang-switcher {
+        margin-left: auto;
+      }
+
+      .nav-inner > .lang-switcher .lang {
+        border-radius: 12px;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        margin-left: 10px;
+        flex: 0 0 auto;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      h2 {
+        font-size: 42px;
+      }
+
+      .section-lead {
+        font-size: 18px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-contact {
+        text-align: left;
+      }
+    }
+
+    .legal-hero {
+      background: var(--soft-2);
+      border-bottom: 1px solid var(--border);
+      padding: 96px 0 64px;
+    }
+
+    .legal-hero .updated {
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .legal-body { padding: 72px 0 96px; }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .legal-toc {
+      position: sticky;
+      top: 110px;
+      display: grid;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .legal-toc a {
+      color: var(--muted);
+      padding: 7px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      line-height: 1.3;
+    }
+
+    .legal-toc a:hover { color: var(--text); background: var(--soft); }
+
+    .legal-content { max-width: 760px; }
+
+    .legal-content section { padding: 0 0 40px; }
+
+    .legal-content h2 {
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .legal-content h3 { font-size: 18px; margin: 22px 0 8px; }
+    .legal-content p { color: #2b2f2e; margin-bottom: 14px; }
+    .legal-content ul { margin: 6px 0 16px 0; padding-left: 0; list-style: none; }
+
+    .legal-content ul li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 9px;
+      color: #2b2f2e;
+    }
+
+    .legal-content ul li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+
+    .legal-content .num { color: var(--accent); font-weight: 800; margin-right: 6px; }
+
+    .ph {
+      background: #fff5cc;
+      border: 1px dashed #e0b400;
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-weight: 700;
+      color: #6b5200;
+    }
+
+    .legal-note {
+      margin-top: 14px;
+      padding: 18px 20px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .legal-card {
+      margin-top: 8px;
+      padding: 22px 24px;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 16px;
+    }
+
+    .legal-card h3 { color: #fff; margin-top: 0; }
+    .legal-card p { color: rgba(255,255,255,.82); }
+    .legal-card a { color: var(--accent); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .legal-grid { grid-template-columns: 1fr; gap: 0; }
+      .legal-toc { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="indexEN.html">
+        <span class="brand-mark"></span>
+        <span>OKOZAM</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="indexEN.html">Home</a>
+        <a href="tecnologia-en.html">Technology</a>
+        <a href="licenciamiento-en.html">Licensing</a>
+        <a href="indexEN.html#contacto" class="nav-cta">Request NDA</a>
+      </nav>
+
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang" type="button" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" id="langToggle">
+          <span>EN</span>
+          <span class="lang-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div class="lang-menu" id="langMenu" hidden>
+          <a href="privacidad.html">
+            <span>Spanish</span>
+          </a>
+          <a href="privacidad-en.html" class="active">
+            <span>English</span>
+          </a>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="indexEN.html">Home</a>
+    <a href="tecnologia-en.html">Technology</a>
+    <a href="licenciamiento-en.html">Licensing</a>
+    <a href="indexEN.html#contacto" class="mobile-cta">Request NDA</a>
+    <div class="lang-switcher mobile" id="langSwitcherMobile">
+      <button class="lang" type="button" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="langMenuMobile" id="langToggleMobile">
+        <span>EN</span>
+        <span class="lang-caret" aria-hidden="true">⌄</span>
+      </button>
+      <div class="lang-menu" id="langMenuMobile" hidden>
+        <a href="privacidad.html">
+          <span>Spanish</span>
+        </a>
+        <a href="privacidad-en.html" class="active">
+          <span>English</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="legal-hero">
+      <div class="container">
+        <div class="eyebrow">Legal Document</div>
+        <h1 style="font-size:clamp(40px,5vw,68px);line-height:1.02;margin-bottom:18px;">Comprehensive Privacy Notice</h1>
+        <p class="section-lead">
+          This Privacy Notice is issued in compliance with the Federal Law on the Protection of Personal Data
+          Held by Private Parties in the United Mexican States (Mexico).
+        </p>
+        <p class="updated">Last updated: <span class="ph">[DATE DD/MM/YYYY]</span></p>
+      </div>
+    </section>
+
+    <section class="legal-body">
+      <div class="container legal-grid">
+        <nav class="legal-toc" aria-label="Notice index">
+          <a href="#responsable">1. Controller</a>
+          <a href="#datos">2. Personal data we collect</a>
+          <a href="#finalidades">3. Purposes</a>
+          <a href="#consentimiento">4. Consent</a>
+          <a href="#transferencias">5. Transfers</a>
+          <a href="#arco">6. ARCO rights</a>
+          <a href="#limitar">7. Limiting use or disclosure</a>
+          <a href="#cookies">8. Cookies and tracking technologies</a>
+          <a href="#cambios">9. Changes to this notice</a>
+          <a href="#autoridad">10. Data protection authority</a>
+        </nav>
+
+        <div class="legal-content">
+          <section id="responsable">
+            <h2><span class="num">1.</span>Identity and address of the controller</h2>
+            <p>
+              The controller of your personal data is
+              <span class="ph">[CONTROLLER NAME OR LEGAL ENTITY]</span>,
+              with address
+              <span class="ph">[FULL LEGAL OR TAX ADDRESS]</span>,
+              and contact email
+              <span class="ph">[EMAIL@DOMAIN]</span>
+              (the "Controller").
+            </p>
+            <p>
+              The Controller is responsible for collecting, using, and protecting the personal data you provide
+              through this website, in accordance with the principles of lawfulness, consent, information, quality,
+              purpose limitation, loyalty, proportionality, and accountability established by applicable law.
+            </p>
+          </section>
+
+          <section id="datos">
+            <h2><span class="num">2.</span>Personal data we collect</h2>
+            <p>
+              Through this site's contact form, we collect directly and by electronic means only the following
+              personal data:
+            </p>
+            <ul>
+              <li>Full name.</li>
+              <li>Company or organization.</li>
+              <li>Email address.</li>
+              <li>Any information you voluntarily include in the message field, as well as the selected interest type (NDA, licensing, acquisition, integration, or technical conversation).</li>
+            </ul>
+            <p>
+              We do not collect sensitive personal data, nor financial or asset-related data, through this site.
+            </p>
+          </section>
+
+          <section id="finalidades">
+            <h2><span class="num">3.</span>Purposes of processing</h2>
+            <h3>Primary purposes (necessary)</h3>
+            <p>Your data is used for the following purposes that give rise to and are necessary for our relationship with you:</p>
+            <ul>
+              <li>To handle, follow up on, and respond to your request for information, NDA, licensing, acquisition, or integration.</li>
+              <li>To contact you by electronic or telephone means to coordinate technical conversations, due diligence, or IP transfer discussions.</li>
+              <li>To identify and qualify the requester as a potential counterparty or partner.</li>
+              <li>To comply with obligations arising from the relationship that may be established.</li>
+            </ul>
+            <h3>Secondary purposes (optional)</h3>
+            <p>
+              Additionally, and only if you do not object, we may use your data to
+              <span class="ph">[DESCRIBE SECONDARY PURPOSE, E.G., SENDING INSTITUTIONAL UPDATES]</span>.
+              If you do not want your data to be processed for these purposes, you may state so as described in
+              section 7 of this notice. Your refusal will not be a reason to deny the requested services.
+            </p>
+          </section>
+
+          <section id="consentimiento">
+            <h2><span class="num">4.</span>Consent</h2>
+            <p>
+              By providing your personal data through this site's form and sending your request, you acknowledge
+              that you have read this Privacy Notice and give your consent for the processing of your data in
+              accordance with the purposes described herein. Consent may be revoked at any time as described in
+              section 6.
+            </p>
+          </section>
+
+          <section id="transferencias">
+            <h2><span class="num">5.</span>Transfers of personal data</h2>
+            <p>
+              The Controller will not transfer your personal data to third parties without your consent, except in
+              the cases provided by law (for example, when a transfer is required by law, necessary for the
+              administration of justice, or carried out within the same corporate group under common policies).
+            </p>
+            <p>
+              If the Controller needs to transfer data to third parties outside the cases above (for example
+              <span class="ph">[LEGAL COUNSEL, EMAIL PROVIDERS, CRM PROVIDERS, IF APPLICABLE]</span>), you will be
+              informed and, when required by law, your consent will be obtained.
+            </p>
+          </section>
+
+          <section id="arco">
+            <h2><span class="num">6.</span>How to exercise ARCO rights and revoke consent</h2>
+            <p>
+              You have the right to know what personal data we hold, what we use it for, and the conditions of its
+              use (Access); to request correction when it is inaccurate or incomplete (Rectification); to request
+              deletion from our records when you consider it is not being used in accordance with the law
+              (Cancellation); and to object to the use of your data for specific purposes (Opposition). These are
+              known as ARCO rights.
+            </p>
+            <p>
+              To exercise any of these rights, or to revoke your consent, send a request to
+              <span class="ph">[EMAIL FOR ARCO REQUESTS]</span> indicating:
+            </p>
+            <ul>
+              <li>Name of the data subject and a means to communicate the response.</li>
+              <li>Document proving identity (or legal representation, if applicable).</li>
+              <li>Clear and precise description of the right you wish to exercise or the specific request.</li>
+              <li>Any element that helps locate the personal data.</li>
+            </ul>
+            <p>
+              The Controller will respond within the timeframes established by applicable law.
+            </p>
+          </section>
+
+          <section id="limitar">
+            <h2><span class="num">7.</span>Limiting use or disclosure of data</h2>
+            <p>
+              You may request that we limit the use or disclosure of your personal data by sending your request to
+              <span class="ph">[EMAIL FOR ARCO REQUESTS]</span>. Additionally, any communication you receive from us
+              will include a mechanism to request that you stop receiving it.
+            </p>
+          </section>
+
+          <section id="cookies">
+            <h2><span class="num">8.</span>Cookies and tracking technologies</h2>
+            <p>
+              <span class="ph">[INDICATE WHETHER THE SITE USES COOKIES OR TRACKING TECHNOLOGIES. IF IT DOES NOT, USE: "This site does not use cookies or tracking technologies that automatically collect personal data."]</span>
+            </p>
+          </section>
+
+          <section id="cambios">
+            <h2><span class="num">9.</span>Changes to this Privacy Notice</h2>
+            <p>
+              This Privacy Notice may be modified due to legal changes, internal practices, or new requirements.
+              Any change will be published on this page, indicating the date of the latest update. We recommend
+              reviewing it periodically.
+            </p>
+          </section>
+
+          <section id="autoridad">
+            <h2><span class="num">10.</span>Data protection authority</h2>
+            <p>
+              If you believe your right to personal data protection has been violated, you may contact the
+              competent authority in Mexico for the protection of personal data held by private parties.
+            </p>
+            <div class="legal-card">
+              <h3>Questions about this notice?</h3>
+              <p>
+                For any inquiry related to the processing of your personal data, email us at
+                <a href="mailto:[EMAIL@DOMAIN]">[EMAIL@DOMAIN]</a>.
+              </p>
+            </div>
+            <p class="legal-note">
+              Team note (remove before publishing): the fields highlighted in yellow are mandatory and must be
+              completed with real data. This document is a structured baseline under applicable law; it is
+              recommended that an attorney review it before publication, especially for a site that handles
+              confidential information under NDA.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-links">
+        <a href="indexEN.html">Home</a>
+        <a href="tecnologia-en.html">Technology</a>
+        <a href="licenciamiento-en.html">Licensing</a>
+        <a href="indexEN.html#contacto">Contact</a>
+        <a href="privacidad-en.html">Privacy</a>
+      </div>
+
+      <div class="footer-contact">
+        <p>OKOZAM Topological Processor IP</p>
+        <p>Puebla, Mexico</p>
+        <p>© 2026 OKOZAM. Limited circulation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("navToggle");
+      var menu = document.getElementById("mobileMenu");
+      var backdrop = document.getElementById("mobileBackdrop");
+      if (!toggle || !menu || !backdrop) return;
+
+      function setOpen(open) {
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        menu.hidden = !open;
+        backdrop.hidden = !open;
+        document.body.classList.toggle("menu-open", open);
+      }
+
+      toggle.addEventListener("click", function () {
+        setOpen(menu.hidden);
+      });
+
+      backdrop.addEventListener("click", function () {
+        setOpen(false);
+      });
+
+      menu.addEventListener("click", function (e) {
+        var link = e.target.closest("a");
+        if (!link) return;
+        setOpen(false);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) setOpen(false);
+      });
+    })();
+
+    (function () {
+      function initLang(switcherId, toggleId, menuId) {
+        var switcher = document.getElementById(switcherId);
+        var toggle = document.getElementById(toggleId);
+        var menu = document.getElementById(menuId);
+        if (!switcher || !toggle || !menu) return;
+
+        function close() {
+          menu.hidden = true;
+          switcher.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+
+        function open() {
+          menu.hidden = false;
+          switcher.classList.add("open");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+
+        toggle.addEventListener("click", function () {
+          if (menu.hidden) open();
+          else close();
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!switcher.contains(e.target)) close();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") close();
+        });
+      }
+
+      initLang("langSwitcher", "langToggle", "langMenu");
+      initLang("langSwitcherMobile", "langToggleMobile", "langMenuMobile");
+    })();
+  </script>
+
+</body>
+</html>
+

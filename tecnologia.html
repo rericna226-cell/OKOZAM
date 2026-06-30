@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Tecnología | OKOZAM IP Core</title>
+
+  <meta
+    name="description"
+    content="Conoce la arquitectura In-Memory 3D asíncrona de OKOZAM, su modelo DEE, sus capas de IP Core y su diferenciación frente al cómputo tradicional."
+  />
+
+  <style>
+    :root {
+      --bg: #f3f7f8;
+      --text: #050505;
+      --muted: #4b5b60;
+      --soft: #e7eef0;
+      --soft-2: #edf4f6;
+      --dark: #071f22;
+      --dark-2: #0e3032;
+      --accent: #26c7a3;
+      --border: #d6e1e4;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 105px 0;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      font-size: clamp(54px, 7.5vw, 108px);
+      line-height: 0.96;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: clamp(42px, 5.2vw, 76px);
+      line-height: 1.02;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 25px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: #222;
+    }
+
+    .section-header {
+      max-width: 900px;
+      margin-bottom: 64px;
+    }
+
+    .center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-lead {
+      font-size: 21px;
+      color: #303332;
+      max-width: 780px;
+    }
+
+    .center .section-lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: #000;
+      color: #fff;
+      border: 1px solid #000;
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-2);
+      border-color: var(--dark-2);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    .btn-secondary:hover {
+      background: #000;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(243, 247, 248, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(7, 31, 34, 0.08);
+    }
+
+    .nav-inner {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      background:
+        linear-gradient(135deg, #394441 0 48%, transparent 48%),
+        linear-gradient(225deg, #111817 0 48%, transparent 48%),
+        linear-gradient(0deg, var(--accent) 0 28%, #596460 28%);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      opacity: 0.76;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      opacity: 1 !important;
+      border: 1px solid #111;
+      border-radius: 999px;
+      padding: 10px 17px;
+    }
+
+    .lang-switcher {
+      position: relative;
+      margin-left: 18px;
+    }
+
+    .lang {
+      appearance: none;
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.76);
+      color: #0b0f0f;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .02em;
+      cursor: pointer;
+    }
+
+    .lang-caret {
+      color: rgba(11,15,15,.55);
+      font-size: 12px;
+      transition: transform .15s ease;
+    }
+
+    .lang-switcher.open .lang-caret {
+      transform: rotate(180deg);
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      min-width: 190px;
+      padding: 8px;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: rgba(255,255,255,.98);
+      box-shadow: 0 24px 80px rgba(0,0,0,.18);
+      display: grid;
+      gap: 6px;
+      z-index: 85;
+    }
+
+    .lang-menu a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      color: #0b0f0f;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      background: transparent;
+    }
+
+    .lang-menu a:hover,
+    .lang-menu a.active {
+      background: rgba(0,0,0,.04);
+      border-color: rgba(0,0,0,.06);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,.14);
+      background: rgba(255,255,255,.76);
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      flex-direction: column;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 20px;
+      height: 2px;
+      background: rgba(0,0,0,.9);
+      border-radius: 999px;
+      display: block;
+    }
+
+    .mobile-backdrop[hidden],
+    .mobile-menu[hidden],
+    .lang-menu[hidden] {
+      display: none;
+    }
+
+    .mobile-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(2px);
+      z-index: 90;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 78px;
+      left: 14px;
+      right: 14px;
+      background: rgba(255,255,255,.98);
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 18px;
+      box-shadow: 0 28px 90px rgba(0,0,0,.18);
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+      z-index: 95;
+    }
+
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #0b0f0f;
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(0,0,0,.06);
+    }
+
+    .mobile-menu a.mobile-cta {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    .mobile-menu .lang-switcher {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .mobile-menu .lang {
+      width: 100%;
+      justify-content: space-between;
+      height: auto;
+      padding: 12px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .mobile-menu .lang-menu {
+      position: static;
+      top: auto;
+      right: auto;
+      min-width: 0;
+      padding: 8px 0 0;
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      gap: 8px;
+    }
+
+    .mobile-menu .lang-menu a {
+      background: rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .hero {
+      padding: 118px 0 108px;
+      background:
+        radial-gradient(circle at top right, rgba(93,152,176,.14), transparent 34%),
+        linear-gradient(180deg, #e8f0f3 0%, var(--soft-2) 54%, #f6fafb 100%);
+      border-bottom: 1px solid rgba(7,31,34,.06);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .hero-visual {
+      min-height: 540px;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(93,152,176,.22), transparent 56%),
+        radial-gradient(circle at 78% 60%, rgba(7,31,34,.18), transparent 60%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(0,0,0,.06) 0 1px,
+          rgba(0,0,0,0) 1px 44px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(0,0,0,.045) 0 1px,
+          rgba(0,0,0,0) 1px 44px
+        ),
+        linear-gradient(180deg, rgba(246,250,251,.96), rgba(231,239,242,.88));
+    }
+
+    .diagram {
+      padding-top: 0;
+      background: linear-gradient(180deg, #f4f8f9 0%, #ffffff 100%);
+    }
+
+    .diagram-title {
+      max-width: 980px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .diagram-title h2 {
+      margin-bottom: 0;
+    }
+
+    .diagram-figure {
+      margin: 0;
+    }
+
+    .diagram-figure img {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.10);
+    }
+
+    .diagram-figure figcaption {
+      margin-top: 18px;
+      text-align: center;
+      color: rgba(17,17,17,.68);
+      font-size: 14px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .split-image {
+      min-height: 500px;
+      background:
+        radial-gradient(circle at 22% 24%, rgba(38,199,163,.22), transparent 58%),
+        radial-gradient(circle at 76% 62%, rgba(7,31,34,.18), transparent 62%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(0,0,0,.06) 0 1px,
+          rgba(0,0,0,0) 1px 46px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(0,0,0,.045) 0 1px,
+          rgba(0,0,0,0) 1px 46px
+        ),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.74));
+    }
+
+    .split p {
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
+
+    .properties {
+      background: var(--soft-2);
+    }
+
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .property-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 30px 24px;
+      min-height: 260px;
+    }
+
+    .property-card h3 {
+      font-size: 21px;
+    }
+
+    .property-card p {
+      font-size: 15px;
+      color: #3b3f3e;
+    }
+
+    .layers {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .layers .eyebrow,
+    .layers .section-lead {
+      color: rgba(255,255,255,.72);
+    }
+
+    .layers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .layer-card {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      padding: 34px 28px;
+      min-height: 310px;
+    }
+
+    .layer-code {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 26px;
+    }
+
+    .layer-card p {
+      color: rgba(255,255,255,.74);
+      font-size: 16px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 17px;
+    }
+
+    th {
+      background: #e5e8e7;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .comparison {
+      background: var(--soft-2);
+    }
+
+    .okozam-col {
+      background: #f4faf8;
+      font-weight: 800;
+    }
+
+    .dee-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 58px;
+      align-items: start;
+    }
+
+    .dee-list {
+      display: grid;
+      gap: 16px;
+      counter-reset: dee;
+    }
+
+    .dee-item {
+      counter-increment: dee;
+      background: var(--soft-2);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px 22px;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      align-items: start;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+    }
+
+    .dee-item::before {
+      content: counter(dee, decimal-leading-zero);
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: rgba(7,31,34,.92);
+      background: rgba(38,199,163,.14);
+      border: 1px solid rgba(38,199,163,.28);
+      margin-top: 2px;
+    }
+
+    .dee-item p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.5;
+      color: #1f2423;
+    }
+
+    .cta {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(38,199,163,.22), transparent 58%),
+        radial-gradient(circle at 78% 60%, rgba(255,255,255,.08), transparent 62%),
+        linear-gradient(120deg, rgba(6,35,38,.96), rgba(13,70,70,.92));
+      color: #fff;
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .cta p {
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .cta .btn-primary {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+
+    .cta .btn-secondary {
+      color: #fff;
+      border-color: rgba(255,255,255,.72);
+    }
+
+    .cta .btn-secondary:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    footer {
+      padding: 70px 0 50px;
+      background: #fff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      border-top: 1px solid #111;
+      padding-top: 36px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 15px;
+      color: #222;
+    }
+
+    .footer-contact {
+      text-align: right;
+      font-size: 15px;
+      color: #222;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .split,
+      .dee-grid,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .properties-grid,
+      .layers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-visual,
+      .split-image {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .lang-switcher {
+        margin-left: auto;
+      }
+
+      .nav-inner > .lang-switcher .lang {
+        border-radius: 12px;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        margin-left: 10px;
+        flex: 0 0 auto;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      h2 {
+        font-size: 42px;
+      }
+
+      .hero p,
+      .section-lead,
+      .split p,
+      .cta p {
+        font-size: 18px;
+      }
+
+      .properties-grid,
+      .layers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-contact {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>OKOZAM</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="tecnologia.html">Tecnología</a>
+        <a href="licenciamiento.html">Licenciamiento</a>
+        <a href="#contacto" class="nav-cta">Solicitar NDA</a>
+      </nav>
+
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang" type="button" aria-label="Seleccionar idioma" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" id="langToggle">
+          <span>ES</span>
+          <span class="lang-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div class="lang-menu" id="langMenu" hidden>
+          <a href="tecnologia.html" class="active">
+            <span>Español</span>
+          </a>
+          <a href="tecnologia-en.html">
+            <span>English</span>
+          </a>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="index.html">Inicio</a>
+    <a href="tecnologia.html">Tecnología</a>
+    <a href="licenciamiento.html">Licenciamiento</a>
+    <a href="#contacto" class="mobile-cta">Solicitar NDA</a>
+    <div class="lang-switcher mobile" id="langSwitcherMobile">
+      <button class="lang" type="button" aria-label="Seleccionar idioma" aria-haspopup="true" aria-expanded="false" aria-controls="langMenuMobile" id="langToggleMobile">
+        <span>ES</span>
+        <span class="lang-caret" aria-hidden="true">⌄</span>
+      </button>
+      <div class="lang-menu" id="langMenuMobile" hidden>
+        <a href="tecnologia.html" class="active">
+          <span>Español</span>
+        </a>
+        <a href="tecnologia-en.html">
+          <span>English</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Tecnología OKOZAM</div>
+          <h1>Una nueva forma de procesar información.</h1>
+          <p>
+            En lugar de separar memoria y procesamiento como en la arquitectura Von Neumann,
+            OKOZAM procesa información directamente dentro de la memoria mediante una estructura
+            tridimensional asíncrona.
+          </p>
+          <p>
+            El resultado es una arquitectura capaz de reducir drásticamente el movimiento de datos,
+            disminuir el consumo energético y escalar computación de manera volumétrica.
+          </p>
+          <div class="actions">
+            <a href="licenciamiento.html" class="btn btn-primary">Explorar licenciamiento</a>
+            <a href="#arquitectura" class="btn btn-secondary">Ver arquitectura</a>
+          </div>
+        </div>
+
+        <div class="hero-visual"></div>
+      </div>
+    </section>
+
+    <section class="diagram">
+      <div class="container">
+        <div class="diagram-title">
+          <h2>Visualización conceptual del flujo de información DEE</h2>
+        </div>
+
+        <figure class="diagram-figure">
+          <img src="Diagrama.png" alt="Visualización conceptual del flujo de información DEE" />
+          <figcaption>
+            Diagrama conceptual de posicionamiento arquitectónico. La documentación técnica detallada y la validación funcional están disponibles bajo NDA.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="properties">
+      <div class="container">
+        <div class="section-header center">
+          <div class="eyebrow">Propiedades de integración</div>
+          <h2>Propiedades de un IP Core listo para integración.</h2>
+          <p class="section-lead">
+            OKOZAM convierte una tesis arquitectónica en un activo técnico estructurado,
+            evaluable y preparado para integración industrial bajo NDA.
+          </p>
+        </div>
+
+        <div class="properties-grid">
+          <article class="property-card">
+            <h3>Arquitectura In-Memory 3D Asíncrona</h3>
+            <p>
+              Procesa datos directamente dentro de la memoria, eliminando transferencias
+              innecesarias y permitiendo escalabilidad volumétrica.
+            </p>
+          </article>
+
+          <article class="property-card">
+            <h3>Eliminación del reloj global tradicional</h3>
+            <p>
+              Sustituye la sincronización centralizada por eventos locales asíncronos,
+              reduciendo consumo, calor y restricciones de escalabilidad.
+            </p>
+          </article>
+
+          <article class="property-card">
+            <h3>ReRAM basada en Óxido de Hafnio</h3>
+            <p>
+              Integra memoria no volátil de alta densidad y bajo consumo, diseñada para
+              arquitecturas 3D avanzadas.
+            </p>
+          </article>
+
+          <article class="property-card">
+            <h3>Consumo cercano a Leakage Power</h3>
+            <p>
+              Minimiza el gasto energético del sistema en estados de estabilidad,
+              acercando la operación a niveles extremadamente bajos.
+            </p>
+          </article>
+
+          <article class="property-card">
+            <h3>Compatible con ecosistemas industriales</h3>
+            <p>
+              Diseñado alrededor de estándares y procesos existentes para facilitar
+              evaluación, adopción e integración.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="arquitectura" class="layers">
+      <div class="container">
+        <div class="section-header center">
+          <div class="eyebrow">Arquitectura del IP Core</div>
+          <h2>Un sistema diseñado en capas integradas.</h2>
+          <p class="section-lead">
+            El paquete de propiedad intelectual de OKOZAM se articula en cuatro capas técnicas,
+            cada una con función específica dentro de la arquitectura.
+          </p>
+        </div>
+
+        <div class="layers-grid">
+          <article class="layer-card">
+            <div class="layer-code">L0</div>
+            <h3>Materiales</h3>
+            <p>
+              Especificación analítica del sustrato ReRAM HfO₂ y modelo físico para
+              comportamiento determinista del sistema.
+            </p>
+          </article>
+
+          <article class="layer-card">
+            <div class="layer-code">L1</div>
+            <h3>Lógica Vóxel</h3>
+            <p>
+              RTL Verilog del Vóxel Topológico, ALU termodinámica, árbol DEMUX y detector
+              de Phase Lock.
+            </p>
+          </article>
+
+          <article class="layer-card">
+            <div class="layer-code">L2</div>
+            <h3>Interconexión</h3>
+            <p>
+              Topología 3D, vecindad completa, ruteo coplanar, TSVs y microbumps para
+              integración volumétrica.
+            </p>
+          </article>
+
+          <article class="layer-card">
+            <div class="layer-code">L3</div>
+            <h3>Interfaz Host</h3>
+            <p>
+              Boundary Scan DEE, telemetría, integración PCIe Gen 5/6, CXL y protocolos
+              de comunicación.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header center">
+          <div class="eyebrow">Madurez técnica</div>
+          <h2>Componentes del IP Core OKOZAM.</h2>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Capa</th>
+                <th>Componente del IP</th>
+                <th>Madurez</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><strong>L0 - Materiales</strong></td>
+                <td>
+                  Especificación analítica del sustrato ReRAM HfO₂ con régimen geométrico
+                  optimizado.
+                </td>
+                <td>Modelo físico documentado.</td>
+              </tr>
+
+              <tr>
+                <td><strong>L1 - Lógica Vóxel</strong></td>
+                <td>
+                  Módulos RTL Verilog del Vóxel Topológico: ALU termodinámica, árbol DEMUX
+                  y detector de Phase Lock.
+                </td>
+                <td>Validado en FPGA Xilinx Artix-7.</td>
+              </tr>
+
+              <tr>
+                <td><strong>L2 - Interconexión</strong></td>
+                <td>
+                  Topología 3D para vecindad completa, ruteo coplanar, TSVs y microbumps.
+                </td>
+                <td>Diseñado para procesos 3D-IC estándar.</td>
+              </tr>
+
+              <tr>
+                <td><strong>L3 - Interfaz Host</strong></td>
+                <td>
+                  Protocolo Boundary Scan DEE, telemetría Sparse Matrix, integración PCIe Gen 5/6 y CXL.
+                </td>
+                <td>Especificado y prototipado.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container dee-grid">
+        <div>
+          <div class="eyebrow">La tesis DEE</div>
+          <h2>Dinámica de Eficiencia Entrópica.</h2>
+          <p class="section-lead">
+            OKOZAM está fundamentado en un marco teórico propietario llamado Dinámica de
+            Eficiencia Entrópica, o DEE.
+          </p>
+        </div>
+
+        <div class="dee-list">
+          <article class="dee-item">
+            <p>La información se interpreta como una propiedad geométrica del sistema.</p>
+          </article>
+
+          <article class="dee-item">
+            <p>La entropía puede dirigirse y acumularse computacionalmente.</p>
+          </article>
+
+          <article class="dee-item">
+            <p>La estabilidad del dato emerge mediante simetría vectorial.</p>
+          </article>
+
+          <article class="dee-item">
+            <p>El Candado de Fase reemplaza la escritura tradicional y reduce el consumo dinámico.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison">
+      <div class="container">
+        <div class="section-header center">
+          <div class="eyebrow">Diferenciación estructural</div>
+          <h2>Una arquitectura distinta frente al estado del arte.</h2>
+          <p class="section-lead">
+            OKOZAM no compite como una optimización incremental, sino como un cambio de
+            arquitectura frente al modelo tradicional.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>GPUs HPC tradicionales</th>
+                <th>Aceleradores Wafer-Scale</th>
+                <th>Neuromórficos</th>
+                <th>OKOZAM IP Core</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Arquitectura</td>
+                <td>Von Neumann síncrona</td>
+                <td>Von Neumann distribuida</td>
+                <td>Asíncrona 2D</td>
+                <td class="okozam-col">In-Memory 3D asíncrona</td>
+              </tr>
+
+              <tr>
+                <td>Memoria</td>
+                <td>HBM externa</td>
+                <td>SRAM on-die</td>
+                <td>SRAM on-die</td>
+                <td class="okozam-col">ReRAM HfO₂ no volátil</td>
+              </tr>
+
+              <tr>
+                <td>Reloj</td>
+                <td>Global GHz</td>
+                <td>Global GHz</td>
+                <td>Local</td>
+                <td class="okozam-col">Sin reloj global</td>
+              </tr>
+
+              <tr>
+                <td>Topología</td>
+                <td>2D</td>
+                <td>2D wafer</td>
+                <td>2D mesh</td>
+                <td class="okozam-col">3D con vecindad completa</td>
+              </tr>
+
+              <tr>
+                <td>Idle Power</td>
+                <td>Alto</td>
+                <td>Alto</td>
+                <td>Medio</td>
+                <td class="okozam-col">Cercano a cero</td>
+              </tr>
+
+              <tr>
+                <td>Escalabilidad</td>
+                <td>Software-bound</td>
+                <td>Wafer-bound</td>
+                <td>Mesh-bound</td>
+                <td class="okozam-col">Lineal volumétrica nativa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin-top: 18px; color: #4f5654;">
+          Comparativa cualitativa de posicionamiento arquitectónico. La validación técnica detallada está disponible bajo NDA.
+        </p>
+      </div>
+    </section>
+
+    <section id="contacto" class="cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow">Siguiente paso</div>
+          <h2>Explora la tecnología bajo NDA.</h2>
+        </div>
+
+        <div>
+          <p>
+            La documentación técnica, evidencia de validación FPGA y estructura de transferencia
+            pueden presentarse a compradores estratégicos y socios industriales calificados.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:contacto@okozam.com?subject=Solicitud%20NDA%20-%20OKOZAM">
+              Solicitar NDA
+            </a>
+            <a class="btn btn-secondary" href="licenciamiento.html">
+              Ver licenciamiento
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="tecnologia.html">Tecnología</a>
+        <a href="licenciamiento.html">Licenciamiento</a>
+        <a href="#contacto">Contacto</a>
+        <a href="privacidad.html">Privacidad</a>
+      </div>
+
+      <div class="footer-contact">
+        <p>OKOZAM Topological Processor IP</p>
+        <p>Puebla, México</p>
+        <p>© 2026 OKOZAM. Difusión limitada.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("navToggle");
+      var menu = document.getElementById("mobileMenu");
+      var backdrop = document.getElementById("mobileBackdrop");
+      if (!toggle || !menu || !backdrop) return;
+
+      function setOpen(open) {
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        menu.hidden = !open;
+        backdrop.hidden = !open;
+        document.body.classList.toggle("menu-open", open);
+      }
+
+      toggle.addEventListener("click", function () {
+        setOpen(menu.hidden);
+      });
+
+      backdrop.addEventListener("click", function () {
+        setOpen(false);
+      });
+
+      menu.addEventListener("click", function (e) {
+        var link = e.target.closest("a");
+        if (!link) return;
+        setOpen(false);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) setOpen(false);
+      });
+    })();
+
+    (function () {
+      function initLang(switcherId, toggleId, menuId) {
+        var switcher = document.getElementById(switcherId);
+        var toggle = document.getElementById(toggleId);
+        var menu = document.getElementById(menuId);
+        if (!switcher || !toggle || !menu) return;
+
+        function close() {
+          menu.hidden = true;
+          switcher.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+
+        function open() {
+          menu.hidden = false;
+          switcher.classList.add("open");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+
+        toggle.addEventListener("click", function () {
+          if (menu.hidden) open();
+          else close();
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!switcher.contains(e.target)) close();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") close();
+        });
+      }
+
+      initLang("langSwitcher", "langToggle", "langMenu");
+      initLang("langSwitcherMobile", "langToggleMobile", "langMenuMobile");
+    })();
+  </script>
+
+</body>
+</html>
