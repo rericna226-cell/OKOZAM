@@ -418,19 +418,11 @@
     .hero-visual {
       min-height: 540px;
       background:
-        radial-gradient(circle at 18% 22%, rgba(38,199,163,.28), transparent 56%),
-        radial-gradient(circle at 78% 60%, rgba(7,31,34,.18), transparent 60%),
-        repeating-linear-gradient(
-          90deg,
-          rgba(0,0,0,.06) 0 1px,
-          rgba(0,0,0,0) 1px 44px
-        ),
-        repeating-linear-gradient(
-          0deg,
-          rgba(0,0,0,.045) 0 1px,
-          rgba(0,0,0,0) 1px 44px
-        ),
-        linear-gradient(180deg, rgba(244,249,247,.96), rgba(233,241,237,.88));
+        linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06)),
+        url("Recursos visuales/License.png") center / cover no-repeat;
+      border-radius: 34px;
+      border: 1px solid rgba(7,31,34,.08);
+      box-shadow: 0 24px 56px rgba(7,31,34,.12);
     }
 
     .package {
@@ -531,34 +523,33 @@
 
     .industry-list {
       display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 22px;
-      align-items: stretch;
+      gap: 16px;
+      align-items: start;
     }
 
     .industry-tabs {
       display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
-      height: 100%;
-      grid-auto-rows: 1fr;
     }
 
     .industry {
       width: 100%;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 14px;
-      padding: 16px 18px;
+      padding: 15px 18px;
       border-radius: 22px;
       border: 1px solid var(--border);
       background: rgba(255,255,255,.82);
       color: #0b0f0f;
       font: inherit;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 650;
       cursor: pointer;
       transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
       text-align: left;
+      min-height: 118px;
     }
 
     .industry:hover {
@@ -581,124 +572,80 @@
       border: 1px solid rgba(7,31,34,.08);
       color: #0b0f0f;
       flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .industry-copy {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .industry-name {
+      display: block;
+      line-height: 1.25;
+    }
+
+    .industry-desc {
+      display: block;
+      color: #4d5857;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.45;
     }
 
     .industry-panel {
       position: relative;
-      overflow: hidden;
       border-radius: 30px;
       border: 1px solid rgba(7,31,34,.08);
-      background:
-        radial-gradient(circle at 18% 22%, rgba(38,199,163,.20), transparent 58%),
-        radial-gradient(circle at 78% 60%, rgba(7,31,34,.09), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,250,249,.96));
-      min-height: 380px;
-      height: 100%;
-      padding: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(247,250,249,.98));
+      min-height: 0;
+      padding: 24px 26px;
       display: grid;
-      gap: 22px;
+      gap: 14px;
       align-content: start;
       box-shadow: 0 28px 70px rgba(7,31,34,.10);
     }
 
-    .panel-visual {
-      position: relative;
-      min-height: 190px;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(7,31,34,.08);
-      background:
-        repeating-linear-gradient(
-          90deg,
-          rgba(7,31,34,.06) 0 1px,
-          rgba(7,31,34,0) 1px 36px
-        ),
-        repeating-linear-gradient(
-          0deg,
-          rgba(7,31,34,.05) 0 1px,
-          rgba(7,31,34,0) 1px 36px
-        ),
-        linear-gradient(135deg, rgba(255,255,255,.84), rgba(238,243,241,.96));
-    }
-
-    .panel-visual::after {
-      content: "";
-      position: absolute;
-      inset: 24px;
-      border-radius: 20px;
-      border: 1px solid rgba(38,199,163,.22);
-      background: rgba(255,255,255,.38);
-      backdrop-filter: blur(2px);
+    .panel-copy {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      max-width: 68ch;
     }
 
     .panel-chip {
-      position: absolute;
-      top: 24px;
-      left: 24px;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 14px;
+      width: fit-content;
+      padding: 9px 13px;
       border-radius: 999px;
-      background: rgba(7,31,34,.92);
-      color: #fff;
+      background: rgba(7,31,34,.06);
+      color: #0b0f0f;
+      border: 1px solid rgba(7,31,34,.08);
       font-size: 13px;
       font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
-    .panel-lines {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-    }
-
-    .panel-lines span {
-      position: absolute;
-      display: block;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(38,199,163,.0), rgba(38,199,163,.9), rgba(38,199,163,.0));
-      box-shadow: 0 0 22px rgba(38,199,163,.25);
-    }
-
-    .panel-lines span:nth-child(1) {
-      width: 54%;
-      top: 58px;
-      left: 20%;
-    }
-
-    .panel-lines span:nth-child(2) {
-      width: 62%;
-      top: 96px;
-      left: 12%;
-    }
-
-    .panel-lines span:nth-child(3) {
-      width: 48%;
-      top: 134px;
-      left: 28%;
-    }
-
-    .panel-lines span:nth-child(4) {
-      width: 58%;
-      top: 172px;
-      left: 18%;
-    }
-
     .industry-panel h3 {
-      font-size: 30px;
-      margin-bottom: 12px;
+      font-size: 24px;
+      margin-bottom: 0;
       color: #0b0f0f;
     }
 
     .industry-panel p {
       color: #33403f;
-      max-width: 54ch;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 1080px) {
+      .industry-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     .buyers-grid {
@@ -809,8 +756,8 @@
         min-height: 420px;
       }
 
-      .industry-list {
-        grid-template-columns: 1fr;
+      .industry-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -873,6 +820,7 @@
         padding: 14px 16px;
         border-radius: 18px;
         font-size: 15px;
+        min-height: auto;
       }
 
       .ind-icon {
@@ -881,8 +829,12 @@
         border-radius: 14px;
       }
 
+      .industry-tabs {
+        grid-template-columns: 1fr;
+      }
+
       .industry-panel {
-        min-height: 320px;
+        min-height: 0;
         padding: 22px;
       }
 
@@ -1129,48 +1081,61 @@
                 <span class="ind-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="8" y="8" width="8" height="8"></rect><path d="M12 1v3"></path><path d="M12 20v3"></path><path d="M1 12h3"></path><path d="M20 12h3"></path></svg>
                 </span>
-                Integración 3D-IC
+                <span class="industry-copy">
+                  <span class="industry-name">Integración 3D-IC</span>
+                  <span class="industry-desc">Diseñado para procesos de integración heterogénea y empaquetado tridimensional.</span>
+                </span>
               </button>
               <button class="industry" type="button" data-panel="tsv" data-chip="TSV" data-title="TSVs y Microbumps" data-desc="Compatible con interconexión volumétrica mediante vías a través del silicio y microbumps.">
                 <span class="ind-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"></path><path d="M6 7v10"></path><path d="M18 7v10"></path><circle cx="6" cy="18" r="1.5"></circle><circle cx="12" cy="18" r="1.5"></circle><circle cx="18" cy="18" r="1.5"></circle></svg>
                 </span>
-                TSVs y Microbumps
+                <span class="industry-copy">
+                  <span class="industry-name">TSVs y Microbumps</span>
+                  <span class="industry-desc">Compatible con interconexión volumétrica mediante vías a través del silicio y microbumps.</span>
+                </span>
               </button>
               <button class="industry" type="button" data-panel="ald" data-chip="ALD" data-title="Procesos ALD Estándar" data-desc="Uso de Óxido de Hafnio procesable mediante flujos estándar de deposición atómica.">
                 <span class="ind-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c2.5 3.1 4 5.4 4 8a4 4 0 1 1-8 0c0-2.6 1.5-4.9 4-8z"></path><path d="M6 20h12"></path></svg>
                 </span>
-                Procesos ALD Estándar
+                <span class="industry-copy">
+                  <span class="industry-name">Procesos ALD Estándar</span>
+                  <span class="industry-desc">Uso de Óxido de Hafnio procesable mediante flujos estándar de deposición atómica.</span>
+                </span>
               </button>
               <button class="industry" type="button" data-panel="pcie" data-chip="PCIe" data-title="PCIe Gen 5 / Gen 6" data-desc="Interfaz orientada a integración con aceleradores y servidores modernos.">
                 <span class="ind-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16v10H4z"></path><path d="M8 7V4"></path><path d="M12 7V4"></path><path d="M16 7V4"></path><path d="M8 17v3"></path><path d="M12 17v3"></path><path d="M16 17v3"></path></svg>
                 </span>
-                PCIe Gen 5 / Gen 6
+                <span class="industry-copy">
+                  <span class="industry-name">PCIe Gen 5 / Gen 6</span>
+                  <span class="industry-desc">Interfaz orientada a integración con aceleradores y servidores modernos.</span>
+                </span>
               </button>
               <button class="industry" type="button" data-panel="cxl" data-chip="CXL" data-title="Compute Express Link (CXL)" data-desc="Compatibilidad estratégica con ecosistemas de cómputo heterogéneo y memoria compartida.">
                 <span class="ind-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 7h10v10H7z"></path><path d="M3 12h4"></path><path d="M17 12h4"></path><path d="M12 3v4"></path><path d="M12 17v4"></path></svg>
                 </span>
-                Compute Express Link (CXL)
+                <span class="industry-copy">
+                  <span class="industry-name">Compute Express Link (CXL)</span>
+                  <span class="industry-desc">Compatibilidad estratégica con ecosistemas de cómputo heterogéneo y memoria compartida.</span>
+                </span>
               </button>
               <button class="industry" type="button" data-panel="servers" data-chip="x86 / ARM" data-title="Servidores x86 y ARM" data-desc="Diseñado para convivir con arquitecturas de infraestructura existentes.">
                 <span class="ind-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="6" rx="1"></rect><rect x="4" y="14" width="16" height="6" rx="1"></rect><path d="M8 7h.01"></path><path d="M8 17h.01"></path><path d="M16 7h.01"></path><path d="M16 17h.01"></path></svg>
                 </span>
-                Servidores x86 y ARM
+                <span class="industry-copy">
+                  <span class="industry-name">Servidores x86 y ARM</span>
+                  <span class="industry-desc">Diseñado para convivir con arquitecturas de infraestructura existentes.</span>
+                </span>
               </button>
             </div>
 
             <div class="industry-panel" id="integrationPanel">
-              <div class="panel-visual">
-                <div class="panel-chip" id="integrationChip">3D-IC</div>
-                <div class="panel-lines" aria-hidden="true">
-                  <span></span><span></span><span></span><span></span>
-                </div>
-              </div>
               <div class="panel-copy">
+                <div class="panel-chip" id="integrationChip">3D-IC</div>
                 <h3 id="integrationTitle">Integración 3D-IC</h3>
                 <p id="integrationDesc">Diseñado para procesos de integración heterogénea y empaquetado tridimensional.</p>
               </div>
@@ -1237,7 +1202,7 @@
           <div class="actions">
             <a
               class="btn btn-primary"
-              href="mailto:contacto@okozam.com?subject=Solicitud%20NDA%20-%20OKOZAM"
+              href="mailto:info@okozam.com?subject=Solicitud%20NDA%20-%20OKOZAM"
             >
               Solicitar NDA
             </a>

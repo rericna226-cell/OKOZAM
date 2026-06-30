@@ -420,19 +420,11 @@
     .hero-visual {
       min-height: 570px;
       background:
-        radial-gradient(circle at 18% 22%, rgba(38,199,163,.24), transparent 58%),
-        radial-gradient(circle at 78% 60%, rgba(7,31,34,.14), transparent 62%),
-        repeating-linear-gradient(
-          90deg,
-          rgba(0,0,0,.06) 0 1px,
-          rgba(0,0,0,0) 1px 44px
-        ),
-        repeating-linear-gradient(
-          0deg,
-          rgba(0,0,0,.045) 0 1px,
-          rgba(0,0,0,0) 1px 44px
-        ),
-        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.72));
+        linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.10)),
+        url("Recursos visuales/heropage.png") center / cover no-repeat;
+      border-radius: 34px;
+      border: 1px solid rgba(7,31,34,.08);
+      box-shadow: 0 24px 60px rgba(7,31,34,.12);
     }
 
     .hero-note {
@@ -537,19 +529,11 @@
     .split-image {
       min-height: 500px;
       background:
-        radial-gradient(circle at 22% 24%, rgba(38,199,163,.22), transparent 58%),
-        radial-gradient(circle at 76% 62%, rgba(7,31,34,.18), transparent 62%),
-        repeating-linear-gradient(
-          90deg,
-          rgba(0,0,0,.06) 0 1px,
-          rgba(0,0,0,0) 1px 46px
-        ),
-        repeating-linear-gradient(
-          0deg,
-          rgba(0,0,0,.045) 0 1px,
-          rgba(0,0,0,0) 1px 46px
-        ),
-        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.74));
+        linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.06)),
+        url("Recursos visuales/mediopage.png") center / contain no-repeat;
+      border-radius: 32px;
+      border: 1px solid rgba(7,31,34,.08);
+      box-shadow: 0 22px 52px rgba(7,31,34,.10);
     }
 
     .split p {
@@ -1745,7 +1729,6 @@
     <section id="contacto" class="cta">
       <div class="container cta-inner">
         <div class="cta-copy">
-          <div class="eyebrow">Acción del comprador</div>
           <h2>Explora licenciamiento, adquisición estratégica o integración bajo NDA.</h2>
           <p>
             Para compradores estratégicos, socios industriales o equipos de inversión tecnológica,
@@ -1852,7 +1835,7 @@
             </div>
 
             <div class="form-note">
-              El formulario prepara un correo dirigido a contacto@okozam.com con tu solicitud.
+              El formulario prepara un correo dirigido a info@okozam.com con tu solicitud.
             </div>
           </form>
         </div>
@@ -2010,7 +1993,7 @@
         }
 
         window.location.href =
-          "mailto:contacto@okozam.com?subject=" +
+          "mailto:info@okozam.com?subject=" +
           encodeURIComponent(subject) +
           "&body=" +
           encodeURIComponent(body);
