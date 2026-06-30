@@ -664,6 +664,158 @@
       margin-bottom: 30px;
     }
 
+    .cta-copy {
+      display: grid;
+      gap: 24px;
+      align-content: start;
+    }
+
+    .cta-copy p {
+      max-width: 34ch;
+      margin-bottom: 0;
+    }
+
+    .cta-points {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cta-points div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.88);
+      font-size: 15px;
+    }
+
+    .cta-points span {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.84);
+      box-shadow: 0 0 18px rgba(255,255,255,.28);
+      flex: 0 0 auto;
+    }
+
+    .cta-form-card {
+      background: rgba(255,255,255,.97);
+      color: var(--dark);
+      padding: 34px;
+      border-radius: 30px;
+      box-shadow: 0 28px 70px rgba(0,0,0,.22);
+    }
+
+    .cta-form-card h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .cta-form-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #30403f;
+      margin-bottom: 22px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: 0.02em;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(7,31,34,.14);
+      border-radius: 16px;
+      background: #fff;
+      color: var(--dark);
+      padding: 14px 15px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(38,199,163,.7);
+      box-shadow: 0 0 0 4px rgba(38,199,163,.16);
+    }
+
+    .field textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .form-consent {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: #30403f;
+      line-height: 1.45;
+      margin-top: 6px;
+    }
+
+    .form-consent input {
+      margin-top: 3px;
+    }
+
+    .form-consent a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .form-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .cta-form-card .btn-primary {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    .cta-form-card .btn-primary:hover {
+      background: var(--dark-2);
+      border-color: var(--dark-2);
+    }
+
+    .form-status {
+      font-size: 13px;
+      font-weight: 600;
+      color: #385856;
+    }
+
+    .form-note {
+      font-size: 13px;
+      color: #556462;
+      margin-top: 4px;
+    }
+
     .cta .btn-primary {
       background: #fff;
       color: #000;
@@ -782,6 +934,10 @@
         grid-template-columns: 1fr;
       }
 
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
       .footer-grid {
         grid-template-columns: 1fr;
       }
@@ -797,15 +953,15 @@
 
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="/home">
         <span class="brand-mark"></span>
         <span>OKOZAM</span>
       </a>
 
       <nav class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="tecnologia.html">Tecnología</a>
-        <a href="licenciamiento.html">Licenciamiento</a>
+        <a href="/home">Inicio</a>
+        <a href="/technology">Tecnología</a>
+        <a href="/licensing">Licenciamiento</a>
         <a href="#contacto" class="nav-cta">Solicitar NDA</a>
       </nav>
 
@@ -815,10 +971,10 @@
           <span class="lang-caret" aria-hidden="true">⌄</span>
         </button>
         <div class="lang-menu" id="langMenu" hidden>
-          <a href="tecnologia.html" class="active">
+          <a href="/technology" class="active">
             <span>Español</span>
           </a>
-          <a href="tecnologia-en.html">
+          <a href="/technology-en">
             <span>English</span>
           </a>
         </div>
@@ -832,9 +988,9 @@
 
   <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
   <div class="mobile-menu" id="mobileMenu" hidden>
-    <a href="index.html">Inicio</a>
-    <a href="tecnologia.html">Tecnología</a>
-    <a href="licenciamiento.html">Licenciamiento</a>
+    <a href="/home">Inicio</a>
+    <a href="/technology">Tecnología</a>
+    <a href="/licensing">Licenciamiento</a>
     <a href="#contacto" class="mobile-cta">Solicitar NDA</a>
     <div class="lang-switcher mobile" id="langSwitcherMobile">
       <button class="lang" type="button" aria-label="Seleccionar idioma" aria-haspopup="true" aria-expanded="false" aria-controls="langMenuMobile" id="langToggleMobile">
@@ -842,10 +998,10 @@
         <span class="lang-caret" aria-hidden="true">⌄</span>
       </button>
       <div class="lang-menu" id="langMenuMobile" hidden>
-        <a href="tecnologia.html" class="active">
+        <a href="/technology" class="active">
           <span>Español</span>
         </a>
-        <a href="tecnologia-en.html">
+        <a href="/technology-en">
           <span>English</span>
         </a>
       </div>
@@ -869,7 +1025,7 @@
             disminuir el consumo energético y escalar computación de manera volumétrica.
           </p>
           <div class="actions">
-            <a href="licenciamiento.html" class="btn btn-primary">Explorar licenciamiento</a>
+            <a href="/licensing" class="btn btn-primary">Explorar licenciamiento</a>
             <a href="#arquitectura" class="btn btn-secondary">Ver arquitectura</a>
           </div>
         </div>
@@ -1170,25 +1326,116 @@
 
     <section id="contacto" class="cta">
       <div class="container cta-inner">
-        <div>
+        <div class="cta-copy">
           <div class="eyebrow">Siguiente paso</div>
           <h2>Explora la tecnología bajo NDA.</h2>
-        </div>
-
-        <div>
           <p>
             La documentación técnica, evidencia de validación FPGA y estructura de transferencia
             pueden presentarse a compradores estratégicos y socios industriales calificados.
           </p>
 
-          <div class="actions">
-            <a class="btn btn-primary" href="mailto:info@okozam.com?subject=Solicitud%20NDA%20-%20OKOZAM">
-              Solicitar NDA
-            </a>
-            <a class="btn btn-secondary" href="licenciamiento.html">
-              Ver licenciamiento
-            </a>
+          <div class="cta-points">
+            <div><span></span> Solicitudes NDA, acceso técnico o revisión de arquitectura.</div>
+            <div><span></span> Conversaciones técnicas para evaluación, due diligence o integración.</div>
+            <div><span></span> Respuesta inicial orientada a compradores y socios industriales calificados.</div>
           </div>
+        </div>
+
+        <div class="cta-form-card">
+          <h3>Solicita información confidencial</h3>
+          <p>
+            Completa el formulario y preparamos la conversación adecuada para NDA,
+            validación técnica, licenciamiento o integración industrial.
+          </p>
+
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-name">Nombre</label>
+                <input id="contact-name" name="name" autocomplete="name" required />
+              </div>
+
+              <div class="field">
+                <label for="contact-company">Empresa</label>
+                <input id="contact-company" name="company" autocomplete="organization" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required />
+              </div>
+
+              <div class="field">
+                <label for="contact-phone">Teléfono</label>
+                <input
+                  id="contact-phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="+__"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-sector">Sector</label>
+                <select id="contact-sector" name="sector" required>
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="hyperscaler">Hyperscaler / Cloud</option>
+                  <option value="fabless">Fabless</option>
+                  <option value="idm">IDM</option>
+                  <option value="foundry">Foundry</option>
+                  <option value="defensa">Defensa e investigación</option>
+                  <option value="inversion">Inversión / VC</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="contact-interest">Interés</label>
+                <select id="contact-interest" name="interest" required>
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="nda">Solicitud de NDA</option>
+                  <option value="tecnica">Revisión técnica</option>
+                  <option value="licenciamiento">Explorar licenciamiento</option>
+                  <option value="integracion">Integración industrial</option>
+                  <option value="adquisicion">Adquisición estratégica</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="contact-message">Mensaje</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                placeholder="Comparte tu caso de uso, objetivo de evaluación, etapa del proceso o el tipo de acceso técnico que necesitas."
+              ></textarea>
+            </div>
+
+            <div class="form-consent">
+              <input id="contact-privacy" name="privacy" type="checkbox" value="accepted" required />
+              <label for="contact-privacy">
+                He leído y acepto el <a href="/privacy">aviso de privacidad</a> y autorizo el
+                tratamiento de mis datos conforme a la LFPDPPP.
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+              <span class="form-status" id="contact-status" aria-live="polite"></span>
+            </div>
+
+            <div class="form-note">
+              El formulario prepara un correo dirigido a info@okozam.com con tu solicitud.
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -1198,11 +1445,11 @@
   <footer>
     <div class="container footer-grid">
       <div class="footer-links">
-        <a href="index.html">Inicio</a>
-        <a href="tecnologia.html">Tecnología</a>
-        <a href="licenciamiento.html">Licenciamiento</a>
+        <a href="/home">Inicio</a>
+        <a href="/technology">Tecnología</a>
+        <a href="/licensing">Licenciamiento</a>
         <a href="#contacto">Contacto</a>
-        <a href="privacidad.html">Privacidad</a>
+        <a href="/privacy">Privacidad</a>
       </div>
 
       <div class="footer-contact">
@@ -1285,6 +1532,58 @@
 
       initLang("langSwitcher", "langToggle", "langMenu");
       initLang("langSwitcherMobile", "langToggleMobile", "langMenuMobile");
+    })();
+
+    (function () {
+      var form = document.getElementById("contact-form");
+      var status = document.getElementById("contact-status");
+      var interestField = document.getElementById("contact-interest");
+      var sectorField = document.getElementById("contact-sector");
+
+      if (!form || !interestField || !sectorField) return;
+
+      var subjects = {
+        nda: "Solicitud de NDA - OKOZAM",
+        tecnica: "Revision tecnica - OKOZAM",
+        licenciamiento: "Explorar licenciamiento - OKOZAM",
+        integracion: "Integracion industrial - OKOZAM",
+        adquisicion: "Adquisicion estrategica - OKOZAM",
+        otro: "Consulta estrategica - OKOZAM"
+      };
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var formData = new FormData(form);
+        var selectedOption = interestField.options[interestField.selectedIndex];
+        var interestLabel = selectedOption ? selectedOption.text : "";
+        var selectedSector = sectorField.options[sectorField.selectedIndex];
+        var sectorLabel = selectedSector ? selectedSector.text : "";
+        var interestValue = formData.get("interest");
+        var subject = subjects[interestValue] || "Consulta estrategica - OKOZAM";
+        var body = [
+          "Nombre: " + (formData.get("name") || ""),
+          "Empresa: " + (formData.get("company") || ""),
+          "Email: " + (formData.get("email") || ""),
+          "Telefono: " + (formData.get("phone") || ""),
+          "Sector: " + sectorLabel,
+          "Interes: " + interestLabel,
+          "Aviso de privacidad: Aceptado",
+          "",
+          "Mensaje:",
+          formData.get("message") || ""
+        ].join("\n");
+
+        if (status) {
+          status.textContent = "Abriendo tu cliente de correo...";
+        }
+
+        window.location.href =
+          "mailto:info@okozam.com?subject=" +
+          encodeURIComponent(subject) +
+          "&body=" +
+          encodeURIComponent(body);
+      });
     })();
   </script>
 

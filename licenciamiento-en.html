@@ -691,6 +691,158 @@
       margin-bottom: 30px;
     }
 
+    .cta-copy {
+      display: grid;
+      gap: 24px;
+      align-content: start;
+    }
+
+    .cta-copy p {
+      max-width: 34ch;
+      margin-bottom: 0;
+    }
+
+    .cta-points {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cta-points div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.88);
+      font-size: 15px;
+    }
+
+    .cta-points span {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.84);
+      box-shadow: 0 0 18px rgba(255,255,255,.28);
+      flex: 0 0 auto;
+    }
+
+    .cta-form-card {
+      background: rgba(255,255,255,.97);
+      color: var(--dark);
+      padding: 34px;
+      border-radius: 30px;
+      box-shadow: 0 28px 70px rgba(0,0,0,.22);
+    }
+
+    .cta-form-card h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .cta-form-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #30403f;
+      margin-bottom: 22px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: 0.02em;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(7,31,34,.14);
+      border-radius: 16px;
+      background: #fff;
+      color: var(--dark);
+      padding: 14px 15px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(38,199,163,.7);
+      box-shadow: 0 0 0 4px rgba(38,199,163,.16);
+    }
+
+    .field textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .form-consent {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: #30403f;
+      line-height: 1.45;
+      margin-top: 6px;
+    }
+
+    .form-consent input {
+      margin-top: 3px;
+    }
+
+    .form-consent a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .form-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .cta-form-card .btn-primary {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    .cta-form-card .btn-primary:hover {
+      background: var(--dark-2);
+      border-color: var(--dark-2);
+    }
+
+    .form-status {
+      font-size: 13px;
+      font-weight: 600;
+      color: #385856;
+    }
+
+    .form-note {
+      font-size: 13px;
+      color: #556462;
+      margin-top: 4px;
+    }
+
     .cta .btn-primary {
       background: #fff;
       color: #000;
@@ -814,6 +966,10 @@
         grid-template-columns: 1fr;
       }
 
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
       .industry {
         padding: 14px 16px;
         border-radius: 18px;
@@ -859,15 +1015,15 @@
 
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="indexEN.html">
+      <a class="brand" href="/home-en">
         <span class="brand-mark"></span>
         <span>OKOZAM</span>
       </a>
 
       <nav class="nav-links">
-        <a href="indexEN.html">Home</a>
-        <a href="tecnologia-en.html">Technology</a>
-        <a href="licenciamiento-en.html">Licensing</a>
+        <a href="/home-en">Home</a>
+        <a href="/technology-en">Technology</a>
+        <a href="/licensing-en">Licensing</a>
         <a href="#contacto" class="nav-cta">Request NDA</a>
       </nav>
 
@@ -877,10 +1033,10 @@
           <span class="lang-caret" aria-hidden="true">⌄</span>
         </button>
         <div class="lang-menu" id="langMenu" hidden>
-          <a href="licenciamiento.html">
+          <a href="/licensing">
             <span>Spanish</span>
           </a>
-          <a href="licenciamiento-en.html" class="active">
+          <a href="/licensing-en" class="active">
             <span>English</span>
           </a>
         </div>
@@ -894,9 +1050,9 @@
 
   <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
   <div class="mobile-menu" id="mobileMenu" hidden>
-    <a href="indexEN.html">Home</a>
-    <a href="tecnologia-en.html">Technology</a>
-    <a href="licenciamiento-en.html">Licensing</a>
+    <a href="/home-en">Home</a>
+    <a href="/technology-en">Technology</a>
+    <a href="/licensing-en">Licensing</a>
     <a href="#contacto" class="mobile-cta">Request NDA</a>
     <div class="lang-switcher mobile" id="langSwitcherMobile">
       <button class="lang" type="button" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="langMenuMobile" id="langToggleMobile">
@@ -904,10 +1060,10 @@
         <span class="lang-caret" aria-hidden="true">⌄</span>
       </button>
       <div class="lang-menu" id="langMenuMobile" hidden>
-        <a href="licenciamiento.html">
+        <a href="/licensing">
           <span>Spanish</span>
         </a>
-        <a href="licenciamiento-en.html" class="active">
+        <a href="/licensing-en" class="active">
           <span>English</span>
         </a>
       </div>
@@ -1133,13 +1289,6 @@
             </button>
           </div>
 
-          <div class="industry-panel" id="integrationPanel">
-            <div class="panel-copy">
-              <div class="panel-chip" id="integrationChip">3D-IC</div>
-              <h3 id="integrationTitle">3D-IC Integration</h3>
-              <p id="integrationDesc">Designed for heterogeneous integration processes and three-dimensional packaging.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -1186,27 +1335,110 @@
 
     <section id="contacto" class="cta">
       <div class="container cta-inner">
-        <div>
+        <div class="cta-copy">
           <div class="eyebrow">Next Step</div>
-          <h2>Request access under NDA.</h2>
-        </div>
-
-        <div>
+          <h2>Explore licensing, strategic acquisition, or integration under NDA.</h2>
           <p>
-            Discover how OKOZAM can be strategically integrated into your infrastructure,
-            business model, or technology ecosystem through acquisition, licensing,
-            or co-development structures.
+            For strategic buyers, industrial partners, or deep-tech investment teams,
+            OKOZAM can be presented under NDA with technical documentation, FPGA validation
+            evidence, and IP transfer structure.
           </p>
 
-          <div class="actions">
-            <a
-              class="btn btn-primary"
-              href="mailto:info@okozam.com?subject=Solicitud%20NDA%20-%20OKOZAM"
-            >
-              Request NDA
-            </a>
-
+          <div class="cta-points">
+            <div><span></span> NDA requests, licensing, or IP transfer discussions.</div>
+            <div><span></span> Technical conversations for due diligence or integration.</div>
+            <div><span></span> Initial response tailored to strategic buyers.</div>
           </div>
+        </div>
+
+        <div class="cta-form-card">
+          <h3>Request confidential information</h3>
+          <p>
+            Complete the form and we will prepare the right conversation for NDA,
+            licensing, acquisition, or industrial integration.
+          </p>
+
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" autocomplete="name" required />
+              </div>
+
+              <div class="field">
+                <label for="contact-company">Company</label>
+                <input id="contact-company" name="company" autocomplete="organization" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required />
+              </div>
+
+              <div class="field">
+                <label for="contact-phone">Phone</label>
+                <input id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="+__" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-sector">Sector</label>
+                <select id="contact-sector" name="sector" required>
+                  <option value="" selected disabled>Select an option</option>
+                  <option value="hyperscaler">Hyperscaler / Cloud</option>
+                  <option value="fabless">Fabless</option>
+                  <option value="idm">IDM</option>
+                  <option value="foundry">Foundry</option>
+                  <option value="defense">Defense and Research</option>
+                  <option value="investment">Investment / VC</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="contact-interest">Interest</label>
+                <select id="contact-interest" name="interest" required>
+                  <option value="" selected disabled>Select an option</option>
+                  <option value="nda">NDA request</option>
+                  <option value="licensing">Explore licensing</option>
+                  <option value="acquisition">Strategic acquisition</option>
+                  <option value="integration">Industrial integration</option>
+                  <option value="technical">Technical conversation</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="contact-message">Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                placeholder="Share your use case, evaluation objective, current stage, or the type of technical access you need."
+              ></textarea>
+            </div>
+
+            <div class="form-consent">
+              <input id="contact-privacy" name="privacy" type="checkbox" value="accepted" required />
+              <label for="contact-privacy">
+                I have read and accept the <a href="/privacy-en">privacy notice</a> and authorize the
+                processing of my data in accordance with applicable law.
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send request</button>
+              <span class="form-status" id="contact-status" aria-live="polite"></span>
+            </div>
+
+            <div class="form-note">
+              The form prepares an email addressed to info@okozam.com with your request.
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -1216,11 +1448,11 @@
   <footer>
     <div class="container footer-grid">
       <div class="footer-links">
-        <a href="indexEN.html">Home</a>
-        <a href="tecnologia-en.html">Technology</a>
-        <a href="licenciamiento-en.html">Licensing</a>
+        <a href="/home-en">Home</a>
+        <a href="/technology-en">Technology</a>
+        <a href="/licensing-en">Licensing</a>
         <a href="#contacto">Contact</a>
-        <a href="privacidad-en.html">Privacy</a>
+        <a href="/privacy-en">Privacy</a>
       </div>
 
       <div class="footer-contact">
@@ -1306,33 +1538,55 @@
     })();
 
     (function () {
-      var root = document.getElementById("integrationTabs");
-      if (!root) return;
+      var form = document.getElementById("contact-form");
+      var status = document.getElementById("contact-status");
+      var interestField = document.getElementById("contact-interest");
+      var sectorField = document.getElementById("contact-sector");
 
-      var tabs = Array.prototype.slice.call(root.querySelectorAll(".industry"));
-      var chip = document.getElementById("integrationChip");
-      var title = document.getElementById("integrationTitle");
-      var desc = document.getElementById("integrationDesc");
+      if (!form || !interestField || !sectorField) return;
 
-      function setActive(btn) {
-        tabs.forEach(function (item) {
-          item.classList.remove("active");
-        });
+      var subjects = {
+        nda: "NDA Request - OKOZAM",
+        licensing: "Explore Licensing - OKOZAM",
+        acquisition: "Strategic Acquisition - OKOZAM",
+        integration: "Industrial Integration - OKOZAM",
+        technical: "Schedule Technical Conversation - OKOZAM",
+        other: "Strategic Inquiry - OKOZAM"
+      };
 
-        btn.classList.add("active");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-        if (chip) chip.textContent = btn.dataset.chip || "";
-        if (title) title.textContent = btn.dataset.title || "";
-        if (desc) desc.textContent = btn.dataset.desc || "";
-      }
+        var formData = new FormData(form);
+        var selectedOption = interestField.options[interestField.selectedIndex];
+        var interestLabel = selectedOption ? selectedOption.text : "";
+        var selectedSector = sectorField.options[sectorField.selectedIndex];
+        var sectorLabel = selectedSector ? selectedSector.text : "";
+        var interestValue = formData.get("interest");
+        var subject = subjects[interestValue] || "Strategic Inquiry - OKOZAM";
+        var body = [
+          "Name: " + (formData.get("name") || ""),
+          "Company: " + (formData.get("company") || ""),
+          "Email: " + (formData.get("email") || ""),
+          "Phone: " + (formData.get("phone") || ""),
+          "Sector: " + sectorLabel,
+          "Interest: " + interestLabel,
+          "Privacy notice: Accepted",
+          "",
+          "Message:",
+          formData.get("message") || ""
+        ].join("\n");
 
-      tabs.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          setActive(btn);
-        });
+        if (status) {
+          status.textContent = "Opening your email client...";
+        }
+
+        window.location.href =
+          "mailto:info@okozam.com?subject=" +
+          encodeURIComponent(subject) +
+          "&body=" +
+          encodeURIComponent(body);
       });
-
-      if (tabs[0]) setActive(tabs[0]);
     })();
   </script>
 
