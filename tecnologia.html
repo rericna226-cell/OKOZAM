@@ -447,22 +447,38 @@
       margin: 0;
     }
 
+    .diagram-frame {
+      position: relative;
+    }
+
     .diagram-figure img {
       width: 100%;
       display: block;
       border: 1px solid var(--border);
       border-radius: 22px;
       box-shadow: 0 26px 70px rgba(0,0,0,.10);
+      transition: filter 0.25s ease;
     }
 
     .diagram-rotate-hint {
       display: none;
-      margin-top: 14px;
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      width: min(82%, 320px);
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(7,31,34,.64);
+      backdrop-filter: blur(10px);
+      color: rgba(255,255,255,.96);
       text-align: center;
       font-size: 13px;
       font-weight: 700;
+      line-height: 1.45;
       letter-spacing: 0.01em;
-      color: rgba(17,17,17,.62);
+      box-shadow: 0 18px 38px rgba(0,0,0,.16);
+      z-index: 1;
+      pointer-events: none;
     }
 
     .diagram-figure figcaption {
@@ -942,10 +958,6 @@
         grid-template-columns: 1fr;
       }
 
-      .diagram-rotate-hint {
-        display: block;
-      }
-
       .form-row {
         grid-template-columns: 1fr;
       }
@@ -956,6 +968,16 @@
 
       .footer-contact {
         text-align: left;
+      }
+    }
+
+    @media (max-width: 760px) and (orientation: portrait) {
+      .diagram-frame img {
+        filter: blur(7px) saturate(0.9) brightness(0.84);
+      }
+
+      .diagram-rotate-hint {
+        display: block;
       }
     }
   </style>
@@ -1038,8 +1060,10 @@
         </div>
 
         <figure class="diagram-figure">
-          <img src="Recursos visuales/Diagrama.png" alt="Visualización conceptual del flujo de información DEE" />
-          <div class="diagram-rotate-hint">Para ver este diagrama completo, gira tu celular en horizontal.</div>
+          <div class="diagram-frame">
+            <img src="Recursos visuales/Diagrama.png" alt="Visualización conceptual del flujo de información DEE" />
+            <div class="diagram-rotate-hint">Para ver este diagrama completo, gira tu celular en horizontal.</div>
+          </div>
           <figcaption>
             Diagrama conceptual de posicionamiento arquitectónico. La documentación técnica detallada y la validación funcional están disponibles bajo NDA.
           </figcaption>
