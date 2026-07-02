@@ -1540,6 +1540,41 @@
         return new URL(mappedFile, window.location.href);
       }
 
+      function rewriteLocalCleanLinks() {
+        var isLocalEnvironment =
+          window.location.protocol === "file:" ||
+          window.location.hostname === "localhost" ||
+          window.location.hostname === "127.0.0.1";
+
+        if (!isLocalEnvironment) return;
+
+        var localRouteMap = {
+          "/home": "index.html",
+          "/home-en": "indexEN.html",
+          "/technology": "tecnologia.html",
+          "/technology-en": "tecnologia-en.html",
+          "/licensing": "licenciamiento.html",
+          "/licensing-en": "licenciamiento-en.html",
+          "/privacy": "privacidad.html",
+          "/privacy-en": "privacidad-en.html"
+        };
+
+        document.querySelectorAll('a[href]').forEach(function (link) {
+          var rawHref = link.getAttribute("href");
+          if (!rawHref || rawHref.charAt(0) !== "/") return;
+
+          var parsedUrl = new URL(rawHref, window.location.href);
+          var mappedFile = localRouteMap[parsedUrl.pathname];
+          if (!mappedFile) return;
+
+          var rewrittenHref = mappedFile;
+          if (parsedUrl.search) rewrittenHref += parsedUrl.search;
+          if (parsedUrl.hash) rewrittenHref += parsedUrl.hash;
+
+          link.setAttribute("href", rewrittenHref);
+        });
+      }
+
       function navigatePreservingPosition(targetHref) {
         if (!targetHref) return;
 
@@ -1635,6 +1670,7 @@
         });
       }
 
+      rewriteLocalCleanLinks();
       restoreScrollAfterLanguageSwitch();
       initMobileMenu();
       initLang("langSwitcher", "langToggle", "langMenu");
