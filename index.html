@@ -1856,42 +1856,95 @@
 
   <script>
     (function () {
-      var toggle = document.getElementById("navToggle");
-      var menu = document.getElementById("mobileMenu");
-      var backdrop = document.getElementById("mobileBackdrop");
-      if (!toggle || !menu || !backdrop) return;
+      var LANG_SCROLL_KEY = "okozam:lang-scroll";
 
-      function setOpen(open) {
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        menu.hidden = !open;
-        backdrop.hidden = !open;
-        document.body.classList.toggle("menu-open", open);
+      function saveScrollForLanguageSwitch() {
+        try {
+          sessionStorage.setItem(
+            LANG_SCROLL_KEY,
+            String(window.scrollY || window.pageYOffset || 0)
+          );
+        } catch (error) {}
       }
 
-      toggle.addEventListener("click", function () {
-        setOpen(menu.hidden);
-      });
+      function restoreScrollAfterLanguageSwitch() {
+        if (window.location.hash) return;
 
-      backdrop.addEventListener("click", function () {
-        setOpen(false);
-      });
+        var storedY = null;
 
-      menu.addEventListener("click", function (e) {
-        var link = e.target.closest("a");
-        if (!link) return;
-        setOpen(false);
-      });
+        try {
+          storedY = sessionStorage.getItem(LANG_SCROLL_KEY);
+          sessionStorage.removeItem(LANG_SCROLL_KEY);
+        } catch (error) {
+          return;
+        }
 
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") setOpen(false);
-      });
+        if (storedY === null) return;
 
-      window.addEventListener("resize", function () {
-        if (window.innerWidth > 760) setOpen(false);
-      });
-    })();
+        var y = parseInt(storedY, 10);
+        if (isNaN(y)) return;
 
-    (function () {
+        window.requestAnimationFrame(function () {
+          window.requestAnimationFrame(function () {
+            window.scrollTo(0, y);
+          });
+        });
+      }
+
+      function navigatePreservingPosition(targetHref) {
+        if (!targetHref) return;
+
+        var targetUrl = new URL(targetHref, window.location.href);
+        var currentHash = window.location.hash;
+
+        if (currentHash) {
+          targetUrl.hash = currentHash;
+        } else {
+          saveScrollForLanguageSwitch();
+        }
+
+        var currentUrl = new URL(window.location.href);
+        if (targetUrl.href === currentUrl.href) return;
+
+        window.location.href = targetUrl.href;
+      }
+
+      function initMobileMenu() {
+        var toggle = document.getElementById("navToggle");
+        var menu = document.getElementById("mobileMenu");
+        var backdrop = document.getElementById("mobileBackdrop");
+        if (!toggle || !menu || !backdrop) return;
+
+        function setOpen(open) {
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          menu.hidden = !open;
+          backdrop.hidden = !open;
+          document.body.classList.toggle("menu-open", open);
+        }
+
+        toggle.addEventListener("click", function () {
+          setOpen(menu.hidden);
+        });
+
+        backdrop.addEventListener("click", function () {
+          setOpen(false);
+        });
+
+        menu.addEventListener("click", function (e) {
+          var link = e.target.closest("a");
+          if (!link) return;
+          setOpen(false);
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") setOpen(false);
+        });
+
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 760) setOpen(false);
+        });
+      }
+
       function initLang(switcherId, toggleId, menuId) {
         var switcher = document.getElementById(switcherId);
         var toggle = document.getElementById(toggleId);
@@ -1915,6 +1968,15 @@
           else close();
         });
 
+        menu.addEventListener("click", function (e) {
+          var link = e.target.closest("a");
+          if (!link) return;
+
+          e.preventDefault();
+          close();
+          navigatePreservingPosition(link.getAttribute("href"));
+        });
+
         document.addEventListener("click", function (e) {
           if (!switcher.contains(e.target)) close();
         });
@@ -1924,6 +1986,8 @@
         });
       }
 
+      restoreScrollAfterLanguageSwitch();
+      initMobileMenu();
       initLang("langSwitcher", "langToggle", "langMenu");
       initLang("langSwitcherMobile", "langToggleMobile", "langMenuMobile");
     })();
