@@ -1514,10 +1514,36 @@
         });
       }
 
+      function resolveLanguageTarget(targetHref) {
+        var targetUrl = new URL(targetHref, window.location.href);
+        var isLocalEnvironment =
+          window.location.protocol === "file:" ||
+          window.location.hostname === "localhost" ||
+          window.location.hostname === "127.0.0.1";
+
+        if (!isLocalEnvironment) return targetUrl;
+
+        var localRouteMap = {
+          "/home": "index.html",
+          "/home-en": "indexEN.html",
+          "/technology": "tecnologia.html",
+          "/technology-en": "tecnologia-en.html",
+          "/licensing": "licenciamiento.html",
+          "/licensing-en": "licenciamiento-en.html",
+          "/privacy": "privacidad.html",
+          "/privacy-en": "privacidad-en.html"
+        };
+
+        var mappedFile = localRouteMap[targetUrl.pathname];
+        if (!mappedFile) return targetUrl;
+
+        return new URL(mappedFile, window.location.href);
+      }
+
       function navigatePreservingPosition(targetHref) {
         if (!targetHref) return;
 
-        var targetUrl = new URL(targetHref, window.location.href);
+        var targetUrl = resolveLanguageTarget(targetHref);
         var currentHash = window.location.hash;
 
         if (currentHash) {
